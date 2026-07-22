@@ -42,7 +42,7 @@ const ITEMS = [
 
 export default function WhatWeDo() {
   return (
-    <section className="bg-white py-20 lg:py-24">
+    <section id="what-we-do" className="bg-white py-20 lg:py-24">
       <div className="container-px">
         <div className="grid lg:grid-cols-[1fr_0.8fr] gap-10 items-start">
           <div>
