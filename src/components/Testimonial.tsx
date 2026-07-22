@@ -29,7 +29,7 @@ export default function Testimonial() {
         <div className="relative">
           <div className="relative aspect-[4/4.4] w-full max-w-md overflow-hidden rounded-2xl">
             <Image
-              src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&q=80&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=800&q=80&auto=format&fit=crop"
               alt="Dr. N. Mahlangu, Medical Practice Owner"
               fill
               className="object-cover"

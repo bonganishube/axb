@@ -43,10 +43,10 @@ export default function Hero() {
   return (
     <section className="relative bg-ink text-white rounded-b-[2.5rem] overflow-hidden">
       <div className="container-px pt-32 pb-16 lg:pt-40">
-        <div className="grid lg:grid-cols-[1.1fr_0.7fr_0.75fr] gap-12 items-center">
+        <div className="grid lg:grid-cols-[1.35fr_0.65fr_0.7fr] gap-10 items-center">
           {/* Copy */}
           <div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-[38px] font-extrabold leading-[1.25] tracking-tight">
               Stop Losing Customers to
               <br />
               Missed Calls, Slow Responses
