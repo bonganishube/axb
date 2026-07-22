@@ -24,12 +24,12 @@ const STEPS = [
 export default function Process() {
   return (
     <section className="bg-cream py-20 lg:py-24">
-      <div className="container-px grid lg:grid-cols-[0.85fr_2.15fr] gap-12 lg:gap-16 items-start">
+      <div className="container-px grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-16 items-start">
         <div>
           <p className="text-xs font-semibold tracking-[0.2em] text-gold-dark">
             OUR PROCESS
           </p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-ink">
+          <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold leading-snug tracking-tight text-ink">
             A simple 4-step journey
             <br />
             to a better running business.
