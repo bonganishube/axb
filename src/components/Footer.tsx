@@ -5,6 +5,7 @@ import {
   LinkedInIcon,
   YoutubeIcon,
 } from "./icons/BrandIcons";
+import Logo from "./Logo";
 
 const QUICK_LINKS = ["Home", "Solutions", "Packages", "Industries", "About Us"];
 const RESOURCES = ["Blog", "Case Studies", "Guides", "FAQs", "Contact"];
@@ -20,9 +21,7 @@ export default function Footer() {
     <footer className="bg-ink text-white/70">
       <div className="container-px py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1fr_0.8fr]">
         <div>
-          <span className="text-2xl font-extrabold tracking-tight text-white">
-            AX<span className="text-gold">B</span>
-          </span>
+          <Logo />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/50">
             We help small businesses capture more customers, save time and
             grow with intelligent automation.

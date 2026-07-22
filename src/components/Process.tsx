@@ -24,21 +24,23 @@ const STEPS = [
 export default function Process() {
   return (
     <section className="bg-cream py-20 lg:py-24">
-      <div className="container-px">
-        <p className="text-xs font-semibold tracking-[0.2em] text-gold-dark">
-          OUR PROCESS
-        </p>
-        <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-ink">
-          A simple 4-step journey
-          <br />
-          to a better running business.
-        </h2>
+      <div className="container-px grid lg:grid-cols-[0.85fr_2.15fr] gap-12 lg:gap-16 items-start">
+        <div>
+          <p className="text-xs font-semibold tracking-[0.2em] text-gold-dark">
+            OUR PROCESS
+          </p>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-ink">
+            A simple 4-step journey
+            <br />
+            to a better running business.
+          </h2>
+        </div>
 
-        <div className="mt-16 relative grid grid-cols-2 sm:grid-cols-4 gap-y-10 gap-x-6">
-          <div className="hidden sm:block absolute top-4 left-0 right-0 border-t-2 border-dashed border-gold/40 -z-0" />
+        <div className="relative grid grid-cols-2 sm:grid-cols-4 gap-y-10 gap-x-6">
+          <div className="hidden sm:block absolute top-[18px] left-4 right-4 border-t-2 border-dashed border-gold/40" />
           {STEPS.map((step) => (
             <div key={step.number} className="relative flex flex-col gap-4">
-              <span className="relative z-10 flex size-9 items-center justify-center rounded-full bg-gold text-sm font-bold text-ink">
+              <span className="relative z-10 flex size-9 items-center justify-center rounded-full bg-gold text-sm font-bold text-ink ring-4 ring-cream">
                 {step.number}
               </span>
               <div>

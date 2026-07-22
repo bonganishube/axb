@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 const NAV_LINKS = [
   { label: "Home", href: "#", hasDropdown: false },
@@ -18,13 +19,8 @@ export default function Header() {
   return (
     <header className="absolute top-0 inset-x-0 z-30">
       <div className="container-px flex items-center justify-between py-6">
-        <a href="#" className="flex flex-col leading-none shrink-0">
-          <span className="text-2xl font-extrabold tracking-tight text-white">
-            AX<span className="text-gold">B</span>
-          </span>
-          <span className="text-[9px] tracking-[0.3em] text-white/60 font-medium mt-0.5">
-            AI CONSULTING
-          </span>
+        <a href="#" className="shrink-0">
+          <Logo />
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">

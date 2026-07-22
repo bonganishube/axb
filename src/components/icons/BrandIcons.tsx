@@ -78,6 +78,33 @@ export function Microsoft365Icon({ className }: IconProps) {
   );
 }
 
+export function CalendarIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <rect x="3" y="4.5" width="18" height="16" rx="2.5" fill="#fff" stroke="#4285F4" strokeWidth="1.6" />
+      <path d="M3 8.5h18" stroke="#4285F4" strokeWidth="1.6" />
+      <path d="M7.5 3v3M16.5 3v3" stroke="#4285F4" strokeWidth="1.6" strokeLinecap="round" />
+      <rect x="10.4" y="11.5" width="3.2" height="3.2" rx="0.6" fill="#4285F4" />
+    </svg>
+  );
+}
+
+export function EmailIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="#fff" stroke="#EA4335" strokeWidth="1.6" />
+      <path
+        d="M4 7.5l8 5.5 8-5.5"
+        fill="none"
+        stroke="#EA4335"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function LinkedInIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">

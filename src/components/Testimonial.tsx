@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { Star } from "lucide-react";
 import {
-  Briefcase,
-  Building2,
+  FileText,
   Home,
+  MoreHorizontal,
   Scale,
-  ShieldAlert,
+  ShieldCheck,
+  Star,
   Stethoscope,
   Users,
   Wrench,
@@ -14,12 +14,12 @@ import {
 const INDUSTRIES = [
   { icon: Stethoscope, label: "Medical Practices" },
   { icon: Scale, label: "Law Firms" },
-  { icon: Briefcase, label: "Accounting Firms" },
+  { icon: FileText, label: "Accounting Firms" },
   { icon: Users, label: "Recruitment Agencies" },
-  { icon: ShieldAlert, label: "Insurance Brokers" },
-  { icon: Building2, label: "Property Agencies" },
+  { icon: ShieldCheck, label: "Insurance Brokers" },
+  { icon: Home, label: "Property Agencies" },
   { icon: Wrench, label: "Home Services" },
-  { icon: Home, label: "...and more" },
+  { icon: MoreHorizontal, label: "...and more" },
 ];
 
 export default function Testimonial() {
@@ -57,7 +57,7 @@ export default function Testimonial() {
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-ink">
             Helping businesses like yours
             <br />
-            <span className="text-gold-dark">win back time and grow.</span>
+            win back <span className="text-gold-dark">time and grow.</span>
           </h2>
 
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-8">

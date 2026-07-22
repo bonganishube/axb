@@ -5,6 +5,8 @@ import {
   SlackIcon,
   WhatsAppIcon,
   FacebookIcon,
+  CalendarIcon,
+  EmailIcon,
 } from "./icons/BrandIcons";
 
 const FEATURES = [
@@ -36,7 +38,8 @@ const TOOLS = [
   { icon: FacebookIcon, label: "Facebook" },
   { icon: SlackIcon, label: "Slack" },
   { icon: Microsoft365Icon, label: "Microsoft 365" },
-  { icon: Calendar, label: "Calendars" },
+  { icon: CalendarIcon, label: "Calendars" },
+  { icon: EmailIcon, label: "Email" },
 ];
 
 export default function Hero() {
@@ -81,7 +84,30 @@ export default function Hero() {
           </div>
 
           {/* Feature bullets */}
-          <div className="flex flex-col gap-6">
+          <div className="relative flex flex-col gap-6">
+            {/* connector lines from the phone */}
+            <svg
+              className="pointer-events-none absolute right-full top-0 hidden h-full w-16 lg:block"
+              viewBox="0 0 64 300"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <g
+                fill="none"
+                stroke="#c9a24a"
+                strokeOpacity="0.5"
+                strokeWidth="1"
+                vectorEffect="non-scaling-stroke"
+              >
+                <path d="M0 150 H20" />
+                <path d="M20 37.5 V262.5" />
+                <path d="M20 37.5 H64" />
+                <path d="M20 112.5 H64" />
+                <path d="M20 187.5 H64" />
+                <path d="M20 262.5 H64" />
+              </g>
+            </svg>
+
             {FEATURES.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="flex items-start gap-3">
                 <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-lg border border-gold/40 text-gold">
