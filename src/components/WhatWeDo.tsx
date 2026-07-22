@@ -50,7 +50,8 @@ export default function WhatWeDo() {
               WHAT WE DO
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-ink">
-              Everything Your Business Needs to{" "}
+              Everything Your Business Needs to
+              <br />
               <span className="text-gold-dark">
                 Stop Losing Time and Customers.
               </span>

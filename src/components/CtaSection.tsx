@@ -14,10 +14,11 @@ export default function CtaSection() {
       </div>
 
       <div className="relative container-px py-24 lg:py-32">
-        <div className="max-w-lg">
+        <div className="max-w-xl">
           <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-white">
-            Let&rsquo;s build a system that works while you focus on what
-            matters.
+            Let&rsquo;s build a system that works
+            <br />
+            while you focus on what matters.
           </h2>
           <p className="mt-4 text-white/70 text-sm leading-relaxed">
             Book a free strategy call and see what&rsquo;s possible for your

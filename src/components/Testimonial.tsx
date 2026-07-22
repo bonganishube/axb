@@ -55,7 +55,8 @@ export default function Testimonial() {
             BUILT FOR SERVICE BUSINESSES
           </p>
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-ink">
-            Helping businesses like yours{" "}
+            Helping businesses like yours
+            <br />
             <span className="text-gold-dark">win back time and grow.</span>
           </h2>
 

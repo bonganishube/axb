@@ -28,8 +28,10 @@ export default function Process() {
         <p className="text-xs font-semibold tracking-[0.2em] text-gold-dark">
           OUR PROCESS
         </p>
-        <h2 className="mt-3 max-w-xl text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-ink">
-          A simple 4-step journey to a better running business.
+        <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-ink">
+          A simple 4-step journey
+          <br />
+          to a better running business.
         </h2>
 
         <div className="mt-16 relative grid grid-cols-2 sm:grid-cols-4 gap-y-10 gap-x-6">
