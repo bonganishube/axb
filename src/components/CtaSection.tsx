@@ -14,8 +14,10 @@ export default function CtaSection() {
       id="contact"
       className="relative isolate overflow-hidden rounded-t-[2.5rem] bg-ink text-white"
     >
-      {/* Photo — full-bleed on mobile, right side on desktop */}
-      <div className="absolute inset-y-0 right-0 w-full lg:w-[56%]">
+      {/* Photo — full-bleed on mobile, right side on desktop.
+          The gradient background is a clean fallback shown until a photo is
+          added at /public/cta-laptop.jpg. */}
+      <div className="absolute inset-y-0 right-0 w-full bg-gradient-to-br from-neutral-800 to-ink lg:w-[56%]">
         <Image
           src="/cta-laptop.jpg"
           alt=""
