@@ -1,9 +1,12 @@
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import {
   FaLinkedinIn,
   FaInstagram,
   FaFacebookF,
   FaYoutube,
+  FaPhone,
+  FaEnvelope,
+  FaLocationDot,
 } from "react-icons/fa6";
 import Logo from "./Logo";
 
@@ -76,15 +79,15 @@ export default function Footer() {
           <p className="text-sm font-semibold text-white">Contact Us</p>
           <ul className="mt-4 flex flex-col gap-3 text-sm">
             <li className="flex items-center gap-2">
-              <Phone className="size-4 text-gold" />
+              <FaPhone className="size-4 text-gold" />
               +27 10 123 4567
             </li>
             <li className="flex items-center gap-2">
-              <Mail className="size-4 text-gold" />
+              <FaEnvelope className="size-4 text-gold" />
               hello@axbai.co.za
             </li>
             <li className="flex items-center gap-2">
-              <MapPin className="size-4 text-gold" />
+              <FaLocationDot className="size-4 text-gold" />
               Johannesburg, South Africa
             </li>
           </ul>
