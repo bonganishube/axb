@@ -16,10 +16,10 @@ export default function CtaSection() {
     >
       {/* Photo — full-bleed on mobile, right side on desktop.
           The gradient background is a clean fallback shown until a photo is
-          added at /public/cta-laptop.jpg. */}
+          added at /public/cta-photo.jpg. */}
       <div className="absolute inset-y-0 right-0 w-full bg-gradient-to-br from-neutral-800 to-ink lg:w-[56%]">
         <Image
-          src="/cta-laptop.jpg"
+          src="/cta-photo.jpg"
           alt=""
           fill
           sizes="(min-width: 1024px) 56vw, 100vw"
