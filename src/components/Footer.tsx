@@ -1,10 +1,10 @@
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import {
-  FacebookIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  YoutubeIcon,
-} from "./icons/BrandIcons";
+  FaLinkedinIn,
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+} from "react-icons/fa6";
 import Logo from "./Logo";
 
 const QUICK_LINKS = [
@@ -16,10 +16,10 @@ const QUICK_LINKS = [
 ];
 const RESOURCES = ["Blog", "Case Studies", "Guides", "FAQs", "Contact"];
 const SOCIALS = [
-  { icon: LinkedInIcon, label: "LinkedIn" },
-  { icon: InstagramIcon, label: "Instagram" },
-  { icon: FacebookIcon, label: "Facebook" },
-  { icon: YoutubeIcon, label: "YouTube" },
+  { icon: FaLinkedinIn, label: "LinkedIn" },
+  { icon: FaInstagram, label: "Instagram" },
+  { icon: FaFacebookF, label: "Facebook" },
+  { icon: FaYoutube, label: "YouTube" },
 ];
 
 export default function Footer() {
