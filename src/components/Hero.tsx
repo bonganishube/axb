@@ -1,13 +1,14 @@
 import { Bell, Calendar, MessageCircle, Play, Repeat, Sparkles } from "lucide-react";
 import {
-  GoogleIcon,
-  Microsoft365Icon,
-  SlackIcon,
-  WhatsAppIcon,
-  FacebookIcon,
-  CalendarIcon,
-  EmailIcon,
-} from "./icons/BrandIcons";
+  FaWhatsapp,
+  FaTiktok,
+  FaInstagram,
+  FaFacebook,
+  FaFacebookMessenger,
+  FaXTwitter,
+  FaLinkedin,
+  FaYoutube,
+} from "react-icons/fa6";
 
 const FEATURES = [
   {
@@ -33,13 +34,14 @@ const FEATURES = [
 ];
 
 const TOOLS = [
-  { icon: GoogleIcon, label: "Google" },
-  { icon: WhatsAppIcon, label: "WhatsApp" },
-  { icon: FacebookIcon, label: "Facebook" },
-  { icon: SlackIcon, label: "Slack" },
-  { icon: Microsoft365Icon, label: "Microsoft 365" },
-  { icon: CalendarIcon, label: "Calendars" },
-  { icon: EmailIcon, label: "Email" },
+  { icon: FaWhatsapp, label: "WhatsApp", color: "#25D366" },
+  { icon: FaTiktok, label: "TikTok", color: "#FFFFFF" },
+  { icon: FaInstagram, label: "Instagram", color: "#E4405F" },
+  { icon: FaFacebook, label: "Facebook", color: "#1877F2" },
+  { icon: FaFacebookMessenger, label: "Messenger", color: "#0084FF" },
+  { icon: FaXTwitter, label: "X", color: "#FFFFFF" },
+  { icon: FaLinkedin, label: "LinkedIn", color: "#0A66C2" },
+  { icon: FaYoutube, label: "YouTube", color: "#FF0000" },
 ];
 
 export default function Hero() {
@@ -48,7 +50,7 @@ export default function Hero() {
       <BackgroundFX />
 
       <div className="container-px relative pt-32 pb-16 lg:pt-40">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_0.72fr_0.72fr] lg:items-center lg:gap-10">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.3fr_0.72fr_0.72fr] lg:items-center lg:gap-10">
           {/* Copy */}
           <div className="max-w-xl">
             <span className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-medium text-gold">
@@ -57,13 +59,13 @@ export default function Hero() {
             </span>
 
             <h1
-              className="animate-fade-up mt-5 text-3xl font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[40px]"
+              className="animate-fade-up mt-5 text-[26px] font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[40px]"
               style={{ animationDelay: "80ms" }}
             >
-              Stop Losing Customers to
-              <br />
-              Missed Calls, Slow Responses
-              <br />
+              Stop Losing Customers to{" "}
+              <br className="hidden lg:block" />
+              Missed Calls, Slow Responses{" "}
+              <br className="hidden lg:block" />
               <span className="bg-[linear-gradient(100deg,#f2ce78,#d7a63c_55%,#9a7621)] bg-clip-text text-transparent">
                 and Manual Admin.
               </span>
@@ -163,12 +165,12 @@ export default function Hero() {
           <span className="whitespace-nowrap text-xs font-medium text-white/40">
             Works with the tools you already use
           </span>
-          {TOOLS.map(({ icon: Icon, label }) => (
+          {TOOLS.map(({ icon: Icon, label, color }) => (
             <span
               key={label}
               className="flex items-center gap-2 text-sm text-white/70 transition-colors hover:text-white"
             >
-              <Icon className="size-4" />
+              <Icon className="size-4" color={color} />
               {label}
             </span>
           ))}
