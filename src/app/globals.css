@@ -100,6 +100,15 @@ h1, h2, h3, h4 {
   }
 }
 
+@keyframes fill-bar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @keyframes typing-bounce {
   0%,
   70%,
@@ -138,7 +147,8 @@ h1, h2, h3, h4 {
   .animate-fade-in,
   .animate-floaty,
   .animate-pulse-dot,
-  .typing-dot {
+  .typing-dot,
+  .animate-fill-bar {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
