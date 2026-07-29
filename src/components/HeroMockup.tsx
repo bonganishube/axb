@@ -543,7 +543,7 @@ function Dashboard() {
       </div>
 
       {/* bottom nav */}
-      <div className="mt-auto -mx-4 flex items-center justify-between border-t border-white/10 px-4 pb-4 pt-3">
+      <div className="mt-auto -mx-4 flex items-center justify-between border-t border-white/10 px-4 pb-4 pt-3 bg-white/2">
         {NAV.map((n) => (
           <span
             key={n.label}
