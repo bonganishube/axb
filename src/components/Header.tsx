@@ -2,16 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/", hasDropdown: false },
-  { label: "Solutions", href: "/#what-we-do", hasDropdown: true },
-  { label: "Packages", href: "/#packages", hasDropdown: false },
-  { label: "Industries", href: "/#industries", hasDropdown: false },
-  { label: "About Us", href: "/#", hasDropdown: false },
-  { label: "Resources", href: "/#", hasDropdown: true },
+  { label: "Home", href: "/" },
+  { label: "Solutions", href: "/#what-we-do" },
+  { label: "Packages", href: "/#packages" },
+  { label: "Industries", href: "/#industries" },
 ];
 
 type HeaderProps = {
@@ -47,7 +45,6 @@ export default function Header({ solid = false, active = "Home" }: HeaderProps) 
               }`}
             >
               {link.label}
-              {link.hasDropdown && <ChevronDown className="size-3.5" />}
             </Link>
           ))}
         </nav>

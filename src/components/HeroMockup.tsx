@@ -138,7 +138,7 @@ export default function HeroMockup() {
   const step = STEPS[active];
 
   return (
-    <div className="flex flex-col items-center gap-7">
+    <div id="how-it-works" className="flex scroll-mt-24 flex-col items-center gap-7">
       <div className="animate-floaty">
         <Phone>
           {/* keyed so reveal animations replay on every step change */}

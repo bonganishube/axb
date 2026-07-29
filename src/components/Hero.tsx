@@ -1,4 +1,4 @@
-import { Bell, Calendar, MessageCircle, Play, Repeat, Sparkles } from "lucide-react";
+import { Play, Sparkles } from "lucide-react";
 import {
   FaWhatsapp,
   FaTiktok,
@@ -10,29 +10,7 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 import HeroMockup from "./HeroMockup";
-
-const FEATURES = [
-  {
-    icon: MessageCircle,
-    title: "Answers enquiries 24/7",
-    desc: "No more missed opportunities",
-  },
-  {
-    icon: Calendar,
-    title: "Books appointments automatically",
-    desc: "Fewer calls, more bookings",
-  },
-  {
-    icon: Repeat,
-    title: "Captures every lead and enquiry",
-    desc: "Never lose a potential customer",
-  },
-  {
-    icon: Bell,
-    title: "Sends follow-ups & reminders",
-    desc: "Improve show-ups and customer loyalty",
-  },
-];
+import HeroFeatures from "./HeroFeatures";
 
 const TOOLS = [
   { icon: FaWhatsapp, label: "WhatsApp", color: "#25D366" },
@@ -111,49 +89,8 @@ export default function Hero() {
             <HeroMockup />
           </div>
 
-          {/* Feature bullets */}
-          <div className="relative flex flex-col gap-6">
-            {/* connector lines from the phone */}
-            <svg
-              className="animate-fade-in pointer-events-none absolute right-full top-0 hidden h-full w-16 lg:block"
-              style={{ animationDelay: "500ms" }}
-              viewBox="0 0 64 300"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <g
-                fill="none"
-                stroke="#c9a24a"
-                strokeOpacity="0.5"
-                strokeWidth="1"
-                strokeDasharray="4 4"
-                vectorEffect="non-scaling-stroke"
-              >
-                <path d="M0 150 H20" />
-                <path d="M20 37.5 V262.5" />
-                <path d="M20 37.5 H64" />
-                <path d="M20 112.5 H64" />
-                <path d="M20 187.5 H64" />
-                <path d="M20 262.5 H64" />
-              </g>
-            </svg>
-
-            {FEATURES.map(({ icon: Icon, title, desc }, i) => (
-              <div
-                key={title}
-                className="animate-fade-up group flex items-start gap-3"
-                style={{ animationDelay: `${360 + i * 100}ms` }}
-              >
-                <span className="mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-lg border border-gold/40 bg-gold/5 text-gold transition-colors group-hover:border-gold group-hover:bg-gold/15">
-                  <Icon className="size-4" />
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-white">{title}</p>
-                  <p className="mt-0.5 text-xs text-white/50">{desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Feature bullets + live connector wires to the phone */}
+          <HeroFeatures />
         </div>
 
         {/* Tools strip */}
