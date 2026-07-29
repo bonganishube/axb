@@ -27,8 +27,8 @@ export default function Testimonial() {
     <section id="industries" className="bg-cream py-20 lg:py-24">
       <div className="container-px grid items-center gap-16 lg:grid-cols-2">
         {/* Image + testimonial card */}
-        <div className="relative">
-          <div className="relative aspect-[4/4.4] w-full max-w-md overflow-hidden rounded-2xl">
+        <div className="relative mx-auto w-full max-w-md lg:mx-0">
+          <div className="relative aspect-[4/4.4] w-full overflow-hidden rounded-2xl">
             <Image
               src="/testimonial-doctor.jpg"
               alt="Dr. N. Mahlangu, Medical Practice Owner"
@@ -37,7 +37,7 @@ export default function Testimonial() {
               className="object-cover"
             />
           </div>
-          <div className="absolute -bottom-6 left-4 right-10 rounded-2xl bg-white p-6 shadow-xl sm:-left-6 sm:right-auto sm:w-80">
+          <div className="relative mx-auto -mt-6 w-[calc(100%-2rem)] rounded-2xl bg-white p-6 shadow-xl sm:absolute sm:-bottom-6 sm:-left-6 sm:mt-0 sm:w-80">
             <div className="flex gap-0.5 text-gold">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="size-4 fill-gold" />

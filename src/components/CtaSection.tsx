@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Fragment } from "react";
 import { CalendarDays, Clock, Play, ShieldCheck, Users } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const TRUST = [
   { icon: ShieldCheck, label: "No obligation" },
@@ -30,7 +31,7 @@ export default function CtaSection() {
         <div className="absolute inset-0 hidden bg-gradient-to-r from-ink via-ink/70 to-transparent lg:block" />
       </div>
 
-      <div className="relative container-px py-12 lg:py-16">
+      <div className="relative container-px grid items-center gap-12 py-12 lg:grid-cols-[1fr_minmax(0,26rem)] lg:gap-16 lg:py-16">
         <div className="max-w-xl">
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-[40px]">
             Let&rsquo;s build a system that works
@@ -75,6 +76,8 @@ export default function CtaSection() {
             ))}
           </div>
         </div>
+
+        <ContactForm />
       </div>
     </section>
   );
