@@ -1,13 +1,5 @@
-import { ArrowRight } from "lucide-react";
-import {
-  FaLinkedinIn,
-  FaInstagram,
-  FaFacebookF,
-  FaYoutube,
-  FaPhone,
-  FaEnvelope,
-  FaLocationDot,
-} from "react-icons/fa6";
+import Link from "next/link";
+import { FaPhone, FaEnvelope, FaLocationDot } from "react-icons/fa6";
 import Logo from "./Logo";
 
 const QUICK_LINKS = [
@@ -17,25 +9,31 @@ const QUICK_LINKS = [
   { label: "Industries", href: "/#industries" },
   { label: "Branding", href: "/branding" },
 ];
-const RESOURCES = ["Blog", "Case Studies", "Guides", "FAQs", "Contact"];
-// const SOCIALS = [
-//   { icon: FaLinkedinIn, label: "LinkedIn" },
-//   { icon: FaInstagram, label: "Instagram" },
-//   { icon: FaFacebookF, label: "Facebook" },
-//   { icon: FaYoutube, label: "YouTube" },
-// ];
+
+const CONTACT = [
+  { icon: FaPhone, label: "+27 10 123 4567", href: "tel:+27101234567" },
+  { icon: FaEnvelope, label: "hello@axbai.co.za", href: "mailto:hello@axbai.co.za" },
+  { icon: FaLocationDot, label: "Johannesburg, South Africa", href: null },
+];
+
+const LEGAL = [
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms of Service", href: "#" },
+];
 
 export default function Footer() {
   return (
     <footer className="bg-ink text-white/70">
-      <div className="container-px py-16 grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_0.8fr_1fr_1.2fr]">
-        <div>
+      <div className="container-px grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1.3fr] lg:gap-16">
+        <div className="sm:col-span-2 lg:col-span-1">
           <Logo />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/50">
-            We help small businesses capture more customers, save time and
-            grow with intelligent automation.
+            We help small businesses capture more customers, save time and grow
+            with intelligent automation.
           </p>
-          {/* <div className="mt-6 flex gap-3">
+          {/* Socials — re-import FaLinkedinIn / FaInstagram / FaFacebookF /
+              FaYoutube from react-icons/fa6 when these go live.
+          <div className="mt-6 flex gap-3">
             {SOCIALS.map(({ icon: Icon, label }) => (
               <a
                 key={label}
@@ -54,15 +52,19 @@ export default function Footer() {
           <ul className="mt-4 flex flex-col gap-3 text-sm">
             {QUICK_LINKS.map((l) => (
               <li key={l.label}>
-                <a href={l.href} className="hover:text-white transition-colors">
+                <Link
+                  href={l.href}
+                  className="transition-colors hover:text-white"
+                >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* <div>
+        {/* Resources — restore the RESOURCES list alongside this block.
+        <div>
           <p className="text-sm font-semibold text-white">Resources</p>
           <ul className="mt-4 flex flex-col gap-3 text-sm">
             {RESOURCES.map((l) => (
@@ -78,21 +80,29 @@ export default function Footer() {
         <div>
           <p className="text-sm font-semibold text-white">Contact Us</p>
           <ul className="mt-4 flex flex-col gap-3 text-sm">
-            <li className="flex items-center gap-2">
-              <FaPhone className="size-4 text-gold" />
-              +27 10 123 4567
-            </li>
-            <li className="flex items-center gap-2">
-              <FaEnvelope className="size-4 text-gold" />
-              hello@axbai.co.za
-            </li>
-            <li className="flex items-center gap-2">
-              <FaLocationDot className="size-4 text-gold" />
-              Johannesburg, South Africa
-            </li>
+            {CONTACT.map(({ icon: Icon, label, href }) => (
+              <li key={label}>
+                {href ? (
+                  <a
+                    href={href}
+                    className="flex items-center gap-2 transition-colors hover:text-white"
+                  >
+                    <Icon className="size-4 shrink-0 text-gold" />
+                    {label}
+                  </a>
+                ) : (
+                  <span className="flex items-center gap-2">
+                    <Icon className="size-4 shrink-0 text-gold" />
+                    {label}
+                  </span>
+                )}
+              </li>
+            ))}
           </ul>
         </div>
 
+        {/* Newsletter — re-import ArrowRight from lucide-react, and wire the
+            button to a Server Action before shipping this.
         <div>
           <p className="text-sm font-semibold text-white">Newsletter</p>
           <p className="mt-4 text-sm text-white/50 leading-relaxed">
@@ -112,21 +122,23 @@ export default function Footer() {
               <ArrowRight className="size-4" />
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-px py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
-          <p>© 2024 AXB AI Consulting. All rights reserved.</p>
+        <div className="container-px flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/40 sm:flex-row">
           <p>
-            <a href="#" className="hover:text-white/70">
-              Privacy Policy
-            </a>{" "}
-            |{" "}
-            <a href="#" className="hover:text-white/70">
-              Terms of Service
-            </a>
+            © {new Date().getFullYear()} AXB AI Consulting. All rights reserved.
           </p>
+          <ul className="flex items-center gap-4">
+            {LEGAL.map((l) => (
+              <li key={l.label}>
+                <a href={l.href} className="transition-colors hover:text-white/70">
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </footer>
