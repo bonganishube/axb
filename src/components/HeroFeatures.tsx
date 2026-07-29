@@ -28,10 +28,10 @@ const FEATURES = [
 
 // Connector strip geometry (px), living in the gap between the phone and the
 // bullets. Only the y-positions are measured — they track each icon's centre.
-const STRIP_W = 64; // matches w-16
-const BUS_X = 20; // x of the vertical "bus" the branches fan out from
-const COMET_SPEED = 46; // px/s — same for every route, so all pulses move in unison
-const COMET_STAGGER = 0.8; // s between consecutive pulses
+const STRIP_W = 100; // matches w-16
+const BUS_X = 30; // x of the vertical "bus" the branches fan out from
+const COMET_SPEED = 20; // px/s — same for every route, so all pulses move in unison
+const COMET_STAGGER = 0; // s between consecutive pulses
 
 export default function HeroFeatures() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -93,9 +93,8 @@ export default function HeroFeatures() {
           {/* static track — the always-visible wiring to all four icons */}
           <g
             stroke="#c9a24a"
-            strokeOpacity="0.5"
+            strokeOpacity="0.6"
             strokeWidth="1"
-            strokeDasharray="4 4"
             vectorEffect="non-scaling-stroke"
           >
             <path d={`M0 ${entryY} H ${BUS_X}`} />

@@ -19,11 +19,11 @@ import {
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
-/*  Shared surface tokens — one calm, consistent card system           */
+/*  Shared surface tokens — dark-mode phone screen                     */
 /* ------------------------------------------------------------------ */
 
-const CARD = "shadow-[0_2px_6px_-2px_rgba(0,0,0,0.06),0_10px_24px_-14px_rgba(0,0,0,0.22)]";
-const BUBBLE = "shadow-[0_1px_1px_rgba(0,0,0,0.05)]";
+const CARD = "shadow-[0_2px_10px_-4px_rgba(0,0,0,0.6)]";
+const BUBBLE = "shadow-[0_1px_2px_rgba(0,0,0,0.35)]";
 
 /* ------------------------------------------------------------------ */
 /*  Step data — the full journey the assistant runs, start to end      */
@@ -198,12 +198,12 @@ export default function HeroMockup() {
 function Phone({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative w-[310px] rounded-[3rem] bg-gradient-to-b from-neutral-800 to-neutral-950 p-[9px] shadow-[0_50px_100px_-30px_rgba(0,0,0,0.6),0_18px_45px_-22px_rgba(0,0,0,0.45)] ring-1 ring-white/10">
-      <div className="relative flex h-[644px] flex-col overflow-hidden rounded-[2.55rem] bg-white ring-1 ring-black/[0.06]">
+      <div className="relative flex h-[680px] flex-col overflow-hidden rounded-[2.55rem] bg-[#0c0918] ring-1 ring-white/10">
         {/* dynamic island */}
         <div className="absolute left-1/2 top-2.5 z-20 h-[22px] w-[84px] -translate-x-1/2 rounded-full bg-black" />
 
         {/* status bar */}
-        <div className="flex items-center justify-between bg-white px-6 pb-2 pt-4 text-[11.5px] font-semibold text-neutral-900">
+        <div className="flex items-center justify-between bg-[#0c0918] px-6 pb-2 pt-4 text-[11.5px] font-semibold text-white">
           <span className="tabular-nums">9:41</span>
           <div className="flex items-center gap-1">
             <SignalIcon />
@@ -226,8 +226,8 @@ function Chat({ items }: { items: ChatItem[] }) {
   return (
     <>
       {/* chat header */}
-      <div className="flex items-center gap-2.5 border-b border-black/[0.06] bg-white px-3.5 py-3">
-        <ChevronLeft className="size-5 shrink-0 text-neutral-400" />
+      <div className="flex items-center gap-2.5 border-b border-white/10 bg-[#0c0918] px-3.5 py-3">
+        <ChevronLeft className="size-5 shrink-0 text-white/50" />
         <div className="relative shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -237,19 +237,19 @@ function Chat({ items }: { items: ChatItem[] }) {
             height={36}
             className="size-9 rounded-full object-cover"
           />
-          <span className="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-white bg-[#31c24d]" />
+          <span className="absolute bottom-0 right-0 size-2.5 rounded-full border-2 border-[#0c0918] bg-[#25d366]" />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="truncate text-[13px] font-semibold leading-tight text-neutral-900">
+          <p className="truncate text-[13px] font-semibold leading-tight text-white">
             AXB Assistant
           </p>
-          <p className="text-[10px] leading-tight text-neutral-400">Online</p>
+          <p className="text-[10px] leading-tight text-white/45">Online</p>
         </div>
-        <MoreVertical className="size-4 shrink-0 text-neutral-400" />
+        <MoreVertical className="size-4 shrink-0 text-white/50" />
       </div>
 
       {/* messages */}
-      <div className="flex min-h-0 flex-1 flex-col justify-end gap-3 overflow-hidden bg-[#f6f6f4] px-4 py-5">
+      <div className="flex min-h-0 flex-1 flex-col justify-end gap-3 overflow-hidden bg-[#0c0918] px-4 py-5">
         {items.map((item, i) => (
           <ChatRow key={i} item={item} delay={i * STAGGER} />
         ))}
@@ -266,7 +266,7 @@ function ChatRow({ item, delay }: { item: ChatItem; delay: number }) {
   if (item.kind === "day") {
     return (
       <div
-        className="animate-fade-up self-center rounded-full bg-black/[0.04] px-3 py-1 text-[9.5px] font-medium text-neutral-500"
+        className="animate-fade-up self-center rounded-full bg-white/10 px-3 py-1 text-[9.5px] font-medium text-white/55"
         style={style}
       >
         {item.text}
@@ -282,22 +282,22 @@ function ChatRow({ item, delay }: { item: ChatItem; delay: number }) {
         style={style}
       >
         <div
-          className={`max-w-[80%] rounded-2xl px-3.5 py-2.5 text-[12px] leading-relaxed ${BUBBLE} ${
+          className={`max-w-[80%] rounded-2xl px-3.5 py-2.5 text-[12px] leading-relaxed text-white/90 ${BUBBLE} ${
             isRight
-              ? "rounded-br-md bg-[#d9fdd3] text-neutral-800"
-              : "rounded-bl-md bg-white text-neutral-800"
+              ? "rounded-br-md bg-[#144d3b]"
+              : "rounded-bl-md bg-white/10 text-white/90"
           }`}
         >
           {item.text}
         </div>
         <span
-          className={`mt-1 flex items-center gap-1 text-[9.5px] tabular-nums text-neutral-400 ${
+          className={`mt-1 flex items-center gap-1 text-[9.5px] tabular-nums text-white/40 ${
             isRight ? "pr-1" : "pl-1"
           }`}
         >
           {item.time}
           {isRight && (
-            <svg width="14" height="9" viewBox="0 0 18 11" fill="none" aria-hidden="true" className="text-[#4aa3e0]">
+            <svg width="14" height="9" viewBox="0 0 18 11" fill="none" aria-hidden="true" className="text-[#53bdeb]">
               <path d="M1 6l3 3.5L9.5 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
               <path d="M7.5 6l3 3.5L17 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -313,9 +313,9 @@ function ChatRow({ item, delay }: { item: ChatItem; delay: number }) {
         {item.slots.map((s) => (
           <div
             key={s}
-            className={`flex items-center gap-3 rounded-2xl bg-white px-3.5 py-2.5 text-[12.5px] font-semibold text-neutral-800 ${CARD}`}
+            className={`flex items-center gap-3 rounded-2xl bg-white/10 text-white/90 px-3.5 py-2.5 text-[12.5px] font-semibold ${CARD}`}
           >
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#16294d]/10 text-[#16294d]">
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
               <Calendar className="size-3.5" />
             </span>
             {s}
@@ -328,33 +328,33 @@ function ChatRow({ item, delay }: { item: ChatItem; delay: number }) {
   if (item.kind === "pay") {
     return (
       <div
-        className={`animate-fade-up w-[88%] self-start rounded-2xl rounded-bl-md bg-white p-4 ${CARD}`}
+        className={`animate-fade-up w-[88%] self-start rounded-2xl rounded-bl-md bg-white/10 text-white/90 p-4 ${CARD}`}
         style={style}
       >
         <div className="flex items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#16294d] text-white">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
             <CreditCard className="size-[18px]" />
           </span>
           <div className="min-w-0">
-            <p className="text-[9px] font-semibold uppercase tracking-[0.13em] text-neutral-400">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.13em] text-white/45">
               {item.label}
             </p>
-            <p className="text-[20px] font-extrabold leading-tight tracking-tight text-neutral-900 tabular-nums">
+            <p className="text-[20px] font-extrabold leading-tight tracking-tight text-white tabular-nums">
               {item.amount}
             </p>
           </div>
         </div>
-        <div className="mt-3 border-t border-neutral-100 pt-2.5 leading-snug">
-          <p className="text-[11.5px] font-medium text-neutral-700">{item.service}</p>
-          <p className="mt-0.5 text-[10px] text-neutral-400">{item.when}</p>
+        <div className="mt-3 border-t border-white/10 pt-2.5 leading-snug">
+          <p className="text-[11.5px] font-medium text-white/75">{item.service}</p>
+          <p className="mt-0.5 text-[10px] text-white/45">{item.when}</p>
         </div>
         <button
           type="button"
-          className="mt-3 w-full rounded-xl bg-[#16294d] py-2.5 text-[12px] font-bold text-white"
+          className="mt-3 w-full rounded-xl bg-gold py-2.5 text-[12px] font-bold text-[#12181d]"
         >
           {item.cta}
         </button>
-        <p className="mt-2 text-right text-[9px] tabular-nums text-neutral-400">
+        <p className="mt-2 text-right text-[9px] tabular-nums text-white/40">
           {item.time}
         </p>
       </div>
@@ -366,22 +366,22 @@ function ChatRow({ item, delay }: { item: ChatItem; delay: number }) {
   // confirmation
   return (
     <div
-      className={`animate-fade-up w-[88%] self-start rounded-2xl rounded-bl-md bg-white p-3.5 ${CARD}`}
+      className={`animate-fade-up w-[88%] self-start rounded-2xl rounded-bl-md bg-white/10 text-white/90 p-3.5 ${CARD}`}
       style={style}
     >
       <div className="flex items-center gap-3">
-        <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#e7f6ec] text-[#2f8f4e]">
+        <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#25d366]/15 text-[#4ade80]">
           <CalendarCheck className="size-[18px]" />
         </span>
         <div className="min-w-0 flex-1 leading-snug">
           <div className="flex items-baseline justify-between gap-2">
-            <p className="text-[12.5px] font-bold text-neutral-900">{item.label}</p>
-            <span className="shrink-0 text-[9px] tabular-nums text-neutral-400">
+            <p className="text-[12.5px] font-bold text-white">{item.label}</p>
+            <span className="shrink-0 text-[9px] tabular-nums text-white/40">
               {item.time}
             </span>
           </div>
-          <p className="mt-0.5 text-[11px] font-medium text-neutral-700">{item.service}</p>
-          <p className="text-[10px] text-neutral-400">{item.when}</p>
+          <p className="mt-0.5 text-[11px] font-medium text-white/75">{item.service}</p>
+          <p className="text-[10px] text-white/45">{item.when}</p>
         </div>
       </div>
     </div>
@@ -390,14 +390,14 @@ function ChatRow({ item, delay }: { item: ChatItem; delay: number }) {
 
 function InputBar() {
   return (
-    <div className="flex items-center gap-2.5 border-t border-black/[0.05] bg-[#f6f6f4] px-3.5 py-3">
-      <Plus className="size-5 shrink-0 text-[#16294d]" />
-      <div className="flex flex-1 items-center gap-2 rounded-full bg-white px-4 py-2.5 text-[11.5px] text-neutral-400 shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+    <div className="flex items-center gap-2.5 border-t border-white/10 bg-[#0c0918] px-3.5 py-3">
+      <Plus className="size-5 shrink-0 text-white/55" />
+      <div className="flex flex-1 items-center gap-2 rounded-full bg-[#191333] px-4 py-2.5 text-[11.5px] text-white/40">
         <span className="flex-1">Type a message</span>
-        <Paperclip className="size-4 text-neutral-400" />
-        <Camera className="size-4 text-neutral-400" />
+        <Paperclip className="size-4 text-white/40" />
+        <Camera className="size-4 text-white/40" />
       </div>
-      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#16294d] text-white shadow-sm">
+      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-gold text-[#12181d] shadow-sm">
         <Mic className="size-4" />
       </span>
     </div>
@@ -409,10 +409,10 @@ function InputBar() {
 /* ------------------------------------------------------------------ */
 
 const STATS = [
-  { icon: Calendar, tint: "bg-[#efe6d3] text-[#a97f2c]", n: "4", k: "Appointments" },
-  { icon: CreditCard, tint: "bg-[#e0f0e4] text-[#2f8f4e]", n: "R2,250", k: "Received" },
-  { icon: Clock, tint: "bg-[#fbeed9] text-[#c07a17]", n: "R750", k: "Pending" },
-  { icon: MessageCircle, tint: "bg-[#e7e6f6] text-[#5b5bd6]", n: "3", k: "Enquiries" },
+  { icon: Calendar, tint: "bg-gold/15 text-gold", n: "4", k: "Appointments" },
+  { icon: CreditCard, tint: "bg-[#4ade80]/15 text-[#4ade80]", n: "R2,250", k: "Received" },
+  { icon: Clock, tint: "bg-[#e0a54e]/15 text-[#e0a54e]", n: "R750", k: "Pending" },
+  { icon: MessageCircle, tint: "bg-[#8b8bf0]/15 text-[#a5a5f5]", n: "3", k: "Enquiries" },
 ];
 const APPTS = [
   ["10:00 AM", "Bridal Glam", "In-studio"],
@@ -424,7 +424,7 @@ const PAYMENTS = [
 ];
 const NAV = [
   { icon: Calendar, label: "Dashboard", active: true },
-  { icon: CalendarCheck, label: "Appoint...s", active: false },
+  { icon: CalendarCheck, label: "Appts", active: false },
   { icon: CreditCard, label: "Payments", active: false },
   { icon: MessageCircle, label: "Enquiries", active: false },
   { icon: MoreHorizontal, label: "More", active: false },
@@ -434,57 +434,57 @@ function Dashboard() {
   let i = 0;
   const step = () => ({ animationDelay: `${i++ * STAGGER}ms` });
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-2 overflow-hidden bg-white px-4 pt-3.5">
+    <div className="flex min-h-0 flex-1 flex-col gap-2 overflow-hidden bg-[#0c0918] px-4 pt-3.5">
       {/* dashboard header */}
       <div className="animate-fade-up flex items-center justify-between" style={step()}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/axb-mark-dark.svg"
+          src="/axb-mark.svg"
           alt="AXB"
           width={61}
           height={20}
           className="h-5 w-auto"
         />
-        <div className="flex items-center gap-2 text-neutral-400">
+        <div className="flex items-center gap-2 text-white/50">
           <Bell className="size-[18px]" />
-          <span className="flex size-8 items-center justify-center rounded-xl bg-neutral-50">
+          <span className="flex size-8 items-center justify-center rounded-xl bg-white/10">
             <Menu className="size-4" />
           </span>
         </div>
       </div>
 
       {/* greeting */}
-      <div className="animate-fade-up" style={step()}>
-        <p className="text-[15px] font-bold leading-tight text-neutral-900">
+      <div className="animate-fade-up border-t border-white/10 pt-2.5" style={step()}>
+        <p className="text-[15px] font-bold leading-tight text-white">
           Good morning, Beauty Studio 👋
         </p>
-        <p className="mt-1 text-[10.5px] text-neutral-400">Saturday, 25 May 2024</p>
+        <p className="mt-1 text-[10.5px] text-white/45">Saturday, 25 May 2024</p>
       </div>
 
       {/* KPI grid — airy 2×2 */}
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-2 gap-2 border-t border-white/10 pt-2.5">
         {STATS.map((s) => (
           <div
             key={s.k}
-            className="animate-fade-up rounded-2xl bg-neutral-50 px-3 py-2.5"
+            className="animate-fade-up rounded-2xl bg-white/5 px-3 py-2.5"
             style={step()}
           >
             <div className="flex items-center gap-2">
               <span className={`flex size-7 shrink-0 items-center justify-center rounded-full ${s.tint}`}>
                 <s.icon className="size-3.5" />
               </span>
-              <p className="text-[16px] font-extrabold leading-none tracking-tight text-neutral-900 tabular-nums">
+              <p className="text-[16px] font-extrabold leading-none tracking-tight text-white tabular-nums">
                 {s.n}
               </p>
             </div>
-            <p className="mt-1.5 text-[10px] font-medium text-neutral-400">{s.k}</p>
+            <p className="mt-1.5 text-[10px] font-medium text-white/45">{s.k}</p>
           </div>
         ))}
       </div>
 
       {/* appointments */}
-      <div className="animate-fade-up mt-1 flex items-baseline justify-between border-t border-neutral-100 pt-2.5" style={step()}>
-        <p className="text-[12.5px] font-bold text-neutral-900">
+      <div className="animate-fade-up flex items-baseline justify-between border-t border-white/10 pt-2.5" style={step()}>
+        <p className="text-[12.5px] font-bold text-white">
           Today&rsquo;s Appointments
         </p>
         <span className="text-[10px] font-semibold text-gold">View all</span>
@@ -493,17 +493,17 @@ function Dashboard() {
         {APPTS.map(([time, name, where]) => (
           <div
             key={time}
-            className="flex items-center gap-3 rounded-2xl bg-neutral-50 px-3 py-2"
+            className="flex items-center gap-3 rounded-2xl bg-white/5 px-3 py-2"
           >
-            <span className="w-14 shrink-0 whitespace-nowrap text-[10.5px] font-bold text-neutral-900 tabular-nums">
+            <span className="w-14 shrink-0 whitespace-nowrap text-[10.5px] font-bold text-white tabular-nums">
               {time}
             </span>
             <div className="min-w-0 flex-1 leading-tight">
-              <p className="truncate text-[11.5px] font-medium text-neutral-800">{name}</p>
-              <p className="truncate text-[9.5px] text-neutral-400">{where}</p>
+              <p className="truncate text-[11.5px] font-medium text-white/90">{name}</p>
+              <p className="truncate text-[9.5px] text-white/45">{where}</p>
             </div>
-            <span className="flex shrink-0 items-center gap-1.5 text-[9px] font-semibold text-[#2f8f4e]">
-              <span className="size-1.5 rounded-full bg-[#2f8f4e]" />
+            <span className="flex shrink-0 items-center gap-1.5 text-[9px] font-semibold text-[#4ade80]">
+              <span className="size-1.5 rounded-full bg-[#4ade80]" />
               Confirmed
             </span>
           </div>
@@ -511,28 +511,28 @@ function Dashboard() {
       </div>
 
       {/* recent payments */}
-      <div className="animate-fade-up mt-1 flex items-baseline justify-between border-t border-neutral-100 pt-2.5" style={step()}>
-        <p className="text-[12.5px] font-bold text-neutral-900">Recent Payments</p>
+      <div className="animate-fade-up flex items-baseline justify-between border-t border-white/10 pt-2.5" style={step()}>
+        <p className="text-[12.5px] font-bold text-white">Recent Payments</p>
         <span className="text-[10px] font-semibold text-gold">View all</span>
       </div>
       <div className="animate-fade-up flex flex-col gap-1.5" style={step()}>
         {PAYMENTS.map((p) => (
           <div
             key={p.name}
-            className="flex items-center gap-3 rounded-2xl bg-neutral-50 px-3 py-2"
+            className="flex items-center gap-3 rounded-2xl bg-white/5 px-3 py-2"
           >
-            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white text-[10px] font-bold text-neutral-600 shadow-[0_1px_2px_rgba(0,0,0,0.06)]">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-[10px] font-bold text-white/70">
               {p.initial}
             </span>
             <div className="min-w-0 flex-1 leading-tight">
-              <p className="truncate text-[11.5px] font-medium text-neutral-800">{p.name}</p>
-              <p className="truncate text-[9.5px] text-neutral-400">{p.svc}</p>
+              <p className="truncate text-[11.5px] font-medium text-white/90">{p.name}</p>
+              <p className="truncate text-[9.5px] text-white/45">{p.svc}</p>
             </div>
             <div className="shrink-0 text-right leading-tight">
-              <p className="text-[11px] font-bold text-neutral-900 tabular-nums">{p.amt}</p>
+              <p className="text-[11px] font-bold text-white tabular-nums">{p.amt}</p>
               <p
                 className={`text-[9px] font-semibold ${
-                  p.status === "Paid" ? "text-[#2f8f4e]" : "text-[#c07a17]"
+                  p.status === "Paid" ? "text-[#4ade80]" : "text-[#e0a54e]"
                 }`}
               >
                 {p.status}
@@ -543,12 +543,12 @@ function Dashboard() {
       </div>
 
       {/* bottom nav */}
-      <div className="mt-auto -mx-4 flex items-center justify-between border-t border-neutral-100 px-4 pb-4 pt-3">
+      <div className="mt-auto -mx-4 flex items-center justify-between border-t border-white/10 px-4 pb-4 pt-3">
         {NAV.map((n) => (
           <span
             key={n.label}
             className={`flex flex-1 flex-col items-center gap-1 text-[7.5px] font-medium ${
-              n.active ? "text-gold" : "text-neutral-400"
+              n.active ? "text-gold" : "text-white/40"
             }`}
           >
             <n.icon className="size-[18px]" />

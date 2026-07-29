@@ -18,12 +18,12 @@ const QUICK_LINKS = [
   { label: "About Us", href: "/#" },
 ];
 const RESOURCES = ["Blog", "Case Studies", "Guides", "FAQs", "Contact"];
-const SOCIALS = [
-  { icon: FaLinkedinIn, label: "LinkedIn" },
-  { icon: FaInstagram, label: "Instagram" },
-  { icon: FaFacebookF, label: "Facebook" },
-  { icon: FaYoutube, label: "YouTube" },
-];
+// const SOCIALS = [
+//   { icon: FaLinkedinIn, label: "LinkedIn" },
+//   { icon: FaInstagram, label: "Instagram" },
+//   { icon: FaFacebookF, label: "Facebook" },
+//   { icon: FaYoutube, label: "YouTube" },
+// ];
 
 export default function Footer() {
   return (
@@ -35,7 +35,7 @@ export default function Footer() {
             We help small businesses capture more customers, save time and
             grow with intelligent automation.
           </p>
-          <div className="mt-6 flex gap-3">
+          {/* <div className="mt-6 flex gap-3">
             {SOCIALS.map(({ icon: Icon, label }) => (
               <a
                 key={label}
@@ -46,7 +46,7 @@ export default function Footer() {
                 <Icon className="size-4" />
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
 
         <div>
