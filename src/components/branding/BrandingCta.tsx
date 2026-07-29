@@ -8,7 +8,7 @@ export default function BrandingCta() {
       {/* product image bleeding off the right edge */}
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[40%] lg:block">
         <Image
-          src="/branding-cta.jpg"
+          src="/branding-cta.jpeg"
           alt="AXB branded mug and merchandise"
           fill
           className="object-cover"

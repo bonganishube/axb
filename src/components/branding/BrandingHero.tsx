@@ -9,7 +9,7 @@ export default function BrandingHero() {
           {/* Product mockup */}
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/branding-hero.jpg"
+              src="/branding-hero.png"
               alt="AXB branded stationery, cards and merchandise"
               fill
               priority
@@ -17,7 +17,7 @@ export default function BrandingHero() {
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
-
+    
           {/* Copy */}
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] text-gold-dark">
