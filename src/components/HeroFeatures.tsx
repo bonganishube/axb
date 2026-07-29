@@ -28,10 +28,10 @@ const FEATURES = [
 
 // Connector strip geometry (px), living in the gap between the phone and the
 // bullets. Only the y-positions are measured — they track each icon's centre.
-const STRIP_W = 100; // matches w-16
+const STRIP_W = 45; // matches w-16
 const BUS_X = 30; // x of the vertical "bus" the branches fan out from
 const COMET_SPEED = 20; // px/s — same for every route, so all pulses move in unison
-const COMET_STAGGER = 0; // s between consecutive pulses
+const COMET_STAGGER = 10; // s between consecutive pulses
 
 export default function HeroFeatures() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -110,7 +110,7 @@ export default function HeroFeatures() {
           <g
             className="wire-pulse"
             stroke="#f2ce78"
-            strokeWidth="1.75"
+            strokeWidth="2"
             strokeLinecap="round"
           >
             {ys.map((y, i) => {

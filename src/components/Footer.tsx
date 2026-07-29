@@ -15,7 +15,7 @@ const QUICK_LINKS = [
   { label: "Solutions", href: "/#what-we-do" },
   { label: "Packages", href: "/#packages" },
   { label: "Industries", href: "/#industries" },
-  { label: "About Us", href: "/#" },
+  { label: "Branding", href: "/branding" },
 ];
 const RESOURCES = ["Blog", "Case Studies", "Guides", "FAQs", "Contact"];
 // const SOCIALS = [
@@ -62,7 +62,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        {/* <div>
           <p className="text-sm font-semibold text-white">Resources</p>
           <ul className="mt-4 flex flex-col gap-3 text-sm">
             {RESOURCES.map((l) => (
@@ -73,7 +73,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
         <div>
           <p className="text-sm font-semibold text-white">Contact Us</p>
