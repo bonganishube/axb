@@ -40,12 +40,22 @@ export default function HeroFeatures() {
     const container = containerRef.current;
     if (!container) return;
 
-    // offsetTop/offsetHeight are layout values — unaffected by the fade-up
-    // transform — so each icon's centre is exact even mid-animation.
+    // Each row's fade-up transform makes the row an offsetParent, so a single
+    // offsetTop only measures within the row. Accumulate offsetTop up the
+    // chain to the container instead — still layout-based (transform-immune,
+    // so it's exact even mid entrance-animation), just correct across nesting.
+    const centerWithin = (node: HTMLElement) => {
+      let y = node.offsetHeight / 2;
+      let cur: HTMLElement | null = node;
+      while (cur && cur !== container) {
+        y += cur.offsetTop;
+        cur = cur.offsetParent as HTMLElement | null;
+      }
+      return y;
+    };
+
     const measure = () => {
-      const ys = iconRefs.current.map((el) =>
-        el ? el.offsetTop + el.offsetHeight / 2 : 0,
-      );
+      const ys = iconRefs.current.map((el) => (el ? centerWithin(el) : 0));
       setGeo({ h: container.offsetHeight, ys });
     };
 
