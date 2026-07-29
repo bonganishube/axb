@@ -424,7 +424,7 @@ const PAYMENTS = [
 ];
 const NAV = [
   { icon: Calendar, label: "Dashboard", active: true },
-  { icon: CalendarCheck, label: "Appointments", active: false },
+  { icon: CalendarCheck, label: "Appoint...s", active: false },
   { icon: CreditCard, label: "Payments", active: false },
   { icon: MessageCircle, label: "Enquiries", active: false },
   { icon: MoreHorizontal, label: "More", active: false },
@@ -434,7 +434,7 @@ function Dashboard() {
   let i = 0;
   const step = () => ({ animationDelay: `${i++ * STAGGER}ms` });
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-2.5 overflow-hidden bg-white px-4 pt-3.5">
+    <div className="flex min-h-0 flex-1 flex-col gap-2 overflow-hidden bg-white px-4 pt-3.5">
       {/* dashboard header */}
       <div className="animate-fade-up flex items-center justify-between" style={step()}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -483,7 +483,7 @@ function Dashboard() {
       </div>
 
       {/* appointments */}
-      <div className="animate-fade-up flex items-baseline justify-between" style={step()}>
+      <div className="animate-fade-up mt-1 flex items-baseline justify-between border-t border-neutral-100 pt-2.5" style={step()}>
         <p className="text-[12.5px] font-bold text-neutral-900">
           Today&rsquo;s Appointments
         </p>
@@ -511,7 +511,7 @@ function Dashboard() {
       </div>
 
       {/* recent payments */}
-      <div className="animate-fade-up flex items-baseline justify-between" style={step()}>
+      <div className="animate-fade-up mt-1 flex items-baseline justify-between border-t border-neutral-100 pt-2.5" style={step()}>
         <p className="text-[12.5px] font-bold text-neutral-900">Recent Payments</p>
         <span className="text-[10px] font-semibold text-gold">View all</span>
       </div>
@@ -547,7 +547,7 @@ function Dashboard() {
         {NAV.map((n) => (
           <span
             key={n.label}
-            className={`flex flex-1 flex-col items-center gap-1 text-[8.5px] font-medium ${
+            className={`flex flex-1 flex-col items-center gap-1 text-[7.5px] font-medium ${
               n.active ? "text-gold" : "text-neutral-400"
             }`}
           >

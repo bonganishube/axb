@@ -75,7 +75,10 @@ export default function HeroFeatures() {
   const entryY = (first + last) / 2;
 
   return (
-    <div ref={containerRef} className="relative flex flex-col gap-6">
+    <div
+      ref={containerRef}
+      className="relative flex flex-col gap-6 md:w-fit md:justify-self-center lg:w-full lg:justify-self-stretch"
+    >
       {/* Connector lines from the phone — measured so they always meet each
           icon's centre, whatever the screen size does to the text wrapping. */}
       {geo && ys.length > 0 && (
