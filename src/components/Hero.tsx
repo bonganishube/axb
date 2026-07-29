@@ -34,7 +34,7 @@ export default function Hero() {
           <div className="max-w-xl">
             <span className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-medium text-gold">
               {/* <Sparkles className="size-3.5" /> */}
-              AI automation for small business
+              AI automation for small businesses
             </span>
 
             <h1
