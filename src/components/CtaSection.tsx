@@ -30,7 +30,7 @@ export default function CtaSection() {
         <div className="absolute inset-0 hidden bg-gradient-to-r from-ink via-ink/70 to-transparent lg:block" />
       </div>
 
-      <div className="relative container-px py-20 lg:py-28">
+      <div className="relative container-px py-12 lg:py-16">
         <div className="max-w-xl">
           <h2 className="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl lg:text-[40px]">
             Let&rsquo;s build a system that works

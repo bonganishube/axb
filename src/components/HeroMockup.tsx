@@ -203,7 +203,7 @@ function Phone({ children }: { children: React.ReactNode }) {
         <div className="absolute left-1/2 top-2.5 z-20 h-[22px] w-[84px] -translate-x-1/2 rounded-full bg-black" />
 
         {/* status bar */}
-        <div className="flex items-center justify-between bg-[#0c0918] px-6 pb-2 pt-4 text-[11.5px] font-semibold text-white">
+        <div className="flex items-center justify-between bg-ink px-6 pb-2 pt-4 text-[11.5px] font-semibold text-white">
           <span className="tabular-nums">9:41</span>
           <div className="flex items-center gap-1">
             <SignalIcon />
@@ -226,7 +226,7 @@ function Chat({ items }: { items: ChatItem[] }) {
   return (
     <>
       {/* chat header */}
-      <div className="flex items-center gap-2.5 border-b border-white/10 bg-[#0c0918] px-3.5 py-3">
+      <div className="flex items-center gap-2.5 border-b border-white/10 bg-ink px-3.5 py-3">
         <ChevronLeft className="size-5 shrink-0 text-white/50" />
         <div className="relative shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -249,7 +249,7 @@ function Chat({ items }: { items: ChatItem[] }) {
       </div>
 
       {/* messages */}
-      <div className="flex min-h-0 flex-1 flex-col justify-end gap-3 overflow-hidden bg-[#0c0918] px-4 py-5">
+      <div className="flex min-h-0 flex-1 flex-col justify-end gap-3 overflow-hidden bg-ink px-4 py-5">
         {items.map((item, i) => (
           <ChatRow key={i} item={item} delay={i * STAGGER} />
         ))}
@@ -390,14 +390,14 @@ function ChatRow({ item, delay }: { item: ChatItem; delay: number }) {
 
 function InputBar() {
   return (
-    <div className="flex items-center gap-2.5 border-t border-white/10 bg-[#0c0918] px-3.5 py-3">
+    <div className="flex items-center gap-2.5 border-t border-white/10 bg-ink px-3.5 py-3">
       <Plus className="size-5 shrink-0 text-white/55" />
-      <div className="flex flex-1 items-center gap-2 rounded-full bg-[#191333] px-4 py-2.5 text-[11.5px] text-white/40">
+      <div className="flex flex-1 items-center gap-2 rounded-full bg-ink-soft px-4 py-2.5 text-[11.5px] text-white/40">
         <span className="flex-1">Type a message</span>
         <Paperclip className="size-4 text-white/40" />
         <Camera className="size-4 text-white/40" />
       </div>
-      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-gold text-[#12181d] shadow-sm">
+      <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink-soft text-white/50 shadow-sm">
         <Mic className="size-4" />
       </span>
     </div>
@@ -434,7 +434,7 @@ function Dashboard() {
   let i = 0;
   const step = () => ({ animationDelay: `${i++ * STAGGER}ms` });
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-2 overflow-hidden bg-[#0c0918] px-4 pt-3.5">
+    <div className="flex min-h-0 flex-1 flex-col gap-2 overflow-hidden bg-ink px-4 pt-3.5">
       {/* dashboard header */}
       <div className="animate-fade-up flex items-center justify-between" style={step()}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
