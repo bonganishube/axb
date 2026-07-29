@@ -192,13 +192,13 @@ export default function HeroMockup() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Phone frame — proper iPhone proportions (~2.14 screen ratio)       */
+/*  Phone frame — proper iPhone proportions (~2.19 screen ratio)       */
 /* ------------------------------------------------------------------ */
 
 function Phone({ children }: { children: React.ReactNode }) {
   return (
     <div className="relative w-[310px] rounded-[3rem] bg-gradient-to-b from-neutral-800 to-neutral-950 p-[9px] shadow-[0_50px_100px_-30px_rgba(0,0,0,0.6),0_18px_45px_-22px_rgba(0,0,0,0.45)] ring-1 ring-white/10">
-      <div className="relative flex h-[680px] flex-col overflow-hidden rounded-[2.55rem] bg-[#0c0918] ring-1 ring-white/10">
+      <div className="relative flex h-[640px] flex-col overflow-hidden rounded-[2.55rem] bg-[#0c0918] ring-1 ring-white/10">
         {/* dynamic island */}
         <div className="absolute left-1/2 top-2.5 z-20 h-[22px] w-[84px] -translate-x-1/2 rounded-full bg-black" />
 
@@ -344,7 +344,7 @@ function ChatRow({ item, delay }: { item: ChatItem; delay: number }) {
             </p>
           </div>
         </div>
-        <div className="mt-3 border-t border-white/10 pt-2.5 leading-snug">
+        <div className="mt-3 border-t border-white/10 pt-2 leading-snug">
           <p className="text-[11.5px] font-medium text-white/75">{item.service}</p>
           <p className="mt-0.5 text-[10px] text-white/45">{item.when}</p>
         </div>
@@ -434,7 +434,7 @@ function Dashboard() {
   let i = 0;
   const step = () => ({ animationDelay: `${i++ * STAGGER}ms` });
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-2 overflow-hidden bg-ink px-4 pt-3.5">
+    <div className="flex min-h-0 flex-1 flex-col gap-1.5 overflow-hidden bg-ink px-4 pt-3">
       {/* dashboard header */}
       <div className="animate-fade-up flex items-center justify-between" style={step()}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -454,7 +454,7 @@ function Dashboard() {
       </div>
 
       {/* greeting */}
-      <div className="animate-fade-up border-t border-white/10 pt-2.5" style={step()}>
+      <div className="animate-fade-up border-t border-white/10 pt-2" style={step()}>
         <p className="text-[15px] font-bold leading-tight text-white">
           Good morning, Beauty Studio 👋
         </p>
@@ -462,7 +462,7 @@ function Dashboard() {
       </div>
 
       {/* KPI grid — airy 2×2 */}
-      <div className="grid grid-cols-2 gap-2 border-t border-white/10 pt-2.5">
+      <div className="grid grid-cols-2 gap-2 border-t border-white/10 pt-2">
         {STATS.map((s) => (
           <div
             key={s.k}
@@ -483,7 +483,7 @@ function Dashboard() {
       </div>
 
       {/* appointments */}
-      <div className="animate-fade-up flex items-baseline justify-between border-t border-white/10 pt-2.5" style={step()}>
+      <div className="animate-fade-up flex items-baseline justify-between border-t border-white/10 pt-2" style={step()}>
         <p className="text-[12.5px] font-bold text-white">
           Today&rsquo;s Appointments
         </p>
@@ -511,7 +511,7 @@ function Dashboard() {
       </div>
 
       {/* recent payments */}
-      <div className="animate-fade-up flex items-baseline justify-between border-t border-white/10 pt-2.5" style={step()}>
+      <div className="animate-fade-up flex items-baseline justify-between border-t border-white/10 pt-2" style={step()}>
         <p className="text-[12.5px] font-bold text-white">Recent Payments</p>
         <span className="text-[10px] font-semibold text-gold">View all</span>
       </div>
