@@ -157,13 +157,16 @@ h1, h2, h3, h4 {
     stroke-dashoffset: 0;
   }
   to {
-    stroke-dashoffset: -100;
+    /* travel exactly this route's length, so speed is uniform across routes */
+    stroke-dashoffset: calc(-1 * var(--flow-len, 200px));
   }
 }
 
 .wire-pulse path {
-  animation: wire-flow 3.4s linear infinite;
-  filter: drop-shadow(0 0 2px #f4d789) drop-shadow(0 0 5px rgba(215, 166, 60, 0.6));
+  animation-name: wire-flow;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 0 2px #f2ce78) drop-shadow(0 0 5px rgba(215, 166, 60, 0.55));
 }
 
 @media (prefers-reduced-motion: reduce) {

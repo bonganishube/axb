@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { Bell, Calendar, MessageCircle, Repeat } from "lucide-react";
 
 const FEATURES = [
@@ -30,6 +30,8 @@ const FEATURES = [
 // bullets. Only the y-positions are measured — they track each icon's centre.
 const STRIP_W = 64; // matches w-16
 const BUS_X = 20; // x of the vertical "bus" the branches fan out from
+const COMET_SPEED = 46; // px/s — same for every route, so all pulses move in unison
+const COMET_STAGGER = 0.8; // s between consecutive pulses
 
 export default function HeroFeatures() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -100,23 +102,32 @@ export default function HeroFeatures() {
             ))}
           </g>
 
-          {/* glowing pulses that flow from the phone out to each icon */}
+          {/* glowing pulses flowing from the phone out to each icon — every
+              route runs at the same speed (duration ∝ its length) and carries
+              an identical-length comet, so the motion is one consistent stream */}
           <g
             className="wire-pulse"
-            stroke="#f4d789"
+            stroke="#f2ce78"
             strokeWidth="1.75"
             strokeLinecap="round"
-            vectorEffect="non-scaling-stroke"
           >
-            {ys.map((y, i) => (
-              <path
-                key={i}
-                d={`M0 ${entryY} H ${BUS_X} V ${y} H ${STRIP_W}`}
-                pathLength={100}
-                strokeDasharray="14 86"
-                style={{ animationDelay: `${i * 0.85}s` }}
-              />
-            ))}
+            {ys.map((y, i) => {
+              const len = STRIP_W + Math.abs(entryY - y); // stub + bus + branch
+              return (
+                <path
+                  key={i}
+                  d={`M0 ${entryY} H ${BUS_X} V ${y} H ${STRIP_W}`}
+                  strokeDasharray="50 800"
+                  style={
+                    {
+                      "--flow-len": `${len}px`,
+                      animationDuration: `${(len / COMET_SPEED).toFixed(2)}s`,
+                      animationDelay: `${(i * COMET_STAGGER).toFixed(2)}s`,
+                    } as CSSProperties
+                  }
+                />
+              );
+            })}
           </g>
         </svg>
       )}
