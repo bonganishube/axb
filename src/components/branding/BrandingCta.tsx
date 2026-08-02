@@ -15,9 +15,18 @@ export default function BrandingCta() {
     <section className="relative isolate overflow-hidden rounded-t-[2.5rem] bg-ink text-white">
       <BackgroundFX accent="gold" />
 
-      {/* Photo — full-bleed wash on mobile, right half on desktop. Same
-          treatment as the home CTA so both dark closers read the same. */}
-      <div className="absolute inset-y-0 right-0 w-full lg:w-[52%]">
+      {/* Photo — masked, not overlaid. Fading the image's own alpha lets the
+          section background show through continuously, so there's no edge for
+          a gradient to almost-but-not-quite match. Top/bottom fades keep it off
+          the white section above and the footer below; the left fade hands over
+          to the copy column on desktop.
+
+          -z-20 puts it under BackgroundFX (-z-10) so the glow and dot grid run
+          unbroken across the whole section instead of stopping at the photo. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-y-0 right-0 -z-20 w-full mask-t-from-80% mask-b-from-65% lg:w-[52%] lg:mask-l-from-45%"
+      >
         <Image
           src="/branding-cta.jpeg"
           alt=""
@@ -25,12 +34,11 @@ export default function BrandingCta() {
           className="object-cover object-center"
           sizes="(min-width: 1024px) 52vw, 100vw"
         />
-        {/* Mobile: knock the photo back so copy stays readable over it */}
-        <div className="absolute inset-0 bg-ink/85 lg:hidden" />
-        {/* Desktop: dissolve the left edge into the copy column */}
-        <div className="absolute inset-0 hidden bg-gradient-to-r from-ink via-ink/70 to-transparent lg:block" />
-        {/* Dissolve the bottom edge into the footer, which is dark too */}
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink to-transparent lg:h-40" />
+        {/* Knock the photo back to the same density as the home CTA, where the
+            image reads as atmosphere rather than a subject. Heavier on mobile,
+            where the copy sits directly over it. Inside the mask, so the wash
+            fades out with the photo instead of ending on its own edge. */}
+        <div className="absolute inset-0 bg-ink/85 lg:bg-ink/65" />
       </div>
 
       <div className="relative container-px py-20 lg:py-24">
