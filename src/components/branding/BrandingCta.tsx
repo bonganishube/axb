@@ -4,7 +4,7 @@ import { ArrowRight, Award } from "lucide-react";
 
 export default function BrandingCta() {
   return (
-    <section className="relative overflow-hidden bg-ink text-white">
+    <section className="relative isolate overflow-hidden rounded-t-[2.5rem] bg-ink text-white">
       {/* product image bleeding off the right edge */}
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[40%] lg:block">
         <Image
@@ -25,10 +25,10 @@ export default function BrandingCta() {
             <span className="flex size-14 items-center justify-center rounded-full border border-gold/40 text-gold">
               <Award className="size-7" />
             </span>
-            <h2 className="mt-5 text-2xl font-extrabold leading-tight tracking-tight text-white">
+            <h2 className="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl">
               Your customers judge your business before they speak to you.
             </h2>
-            <p className="mt-3 text-sm leading-relaxed text-white/55">
+            <p className="mt-5 text-[15px] leading-relaxed text-white/70">
               Your branding tells people whether you&rsquo;re trustworthy,
               professional and established.
             </p>
@@ -42,7 +42,7 @@ export default function BrandingCta() {
             </p>
             <Link
               href="/#contact"
-              className="mt-6 inline-flex w-fit items-center gap-2 rounded-md bg-gold px-6 py-3 text-sm font-semibold text-ink hover:bg-gold-light transition-colors"
+              className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-gold px-6 py-3.5 text-sm font-semibold text-ink shadow-[0_10px_30px_-8px_rgba(215,166,60,0.6)] transition-all hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-[0_16px_40px_-8px_rgba(215,166,60,0.75)]"
             >
               Book a Branding Consultation
               <ArrowRight className="size-4" />

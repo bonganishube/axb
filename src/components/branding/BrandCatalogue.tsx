@@ -1,185 +1,159 @@
-import {
-  AppWindow,
-  ArrowRight,
-  BookOpen,
-  Building2,
-  Car,
-  Coffee,
-  CreditCard,
-  FileText,
-  Flag,
-  Gem,
-  Gift,
-  GlassWater,
-  KeyRound,
-  Layers,
-  Mail,
-  Nfc,
-  NotebookPen,
-  Pen,
-  Presentation,
-  ReceiptText,
-  RefreshCw,
-  Share2,
-  Shirt,
-  Signpost,
-  Store,
-  Table,
-  Tent,
-  Timer,
-  Truck,
-  type LucideIcon,
-} from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Building2, Gift, Palette, type LucideIcon } from "lucide-react";
 
 type Category = {
   title: string;
-  headerIcon: LucideIcon;
-  items: { icon: LucideIcon; label: string }[];
+  icon: LucideIcon;
+  items: string[];
 };
 
+/* One icon per category, not per line item — the list reads as a list. */
 const CATEGORIES: Category[] = [
   {
     title: "BRANDING ESSENTIALS",
-    headerIcon: Mail,
+    icon: Palette,
     items: [
-      { icon: CreditCard, label: "Business Cards" },
-      { icon: FileText, label: "Letterheads" },
-      { icon: Mail, label: "Email Signature" },
-      { icon: ReceiptText, label: "Invoice Template" },
-      { icon: Building2, label: "Company Profile" },
-      { icon: Share2, label: "Social Media Templates" },
-      { icon: Presentation, label: "Presentation Deck" },
-      { icon: BookOpen, label: "Brand Guidelines" },
-      { icon: RefreshCw, label: "Logo Refresh" },
+      "Business Cards",
+      "Letterheads",
+      "Email Signature",
+      "Invoice Template",
+      "Company Profile",
+      "Social Media Templates",
+      "Presentation Deck",
+      "Brand Guidelines",
+      "Logo Refresh",
     ],
   },
   {
     title: "PROMOTIONAL ITEMS",
-    headerIcon: Gift,
+    icon: Gift,
     items: [
-      { icon: Nfc, label: "NFC Business Card" },
-      { icon: KeyRound, label: "NFC Key Holder" },
-      { icon: Pen, label: "Pens" },
-      { icon: NotebookPen, label: "Notepads" },
-      { icon: Coffee, label: "Mugs" },
-      { icon: GlassWater, label: "Water Bottles" },
-      { icon: Shirt, label: "T-Shirts" },
-      { icon: Shirt, label: "Golf Shirts" },
-      { icon: Shirt, label: "Hoodies" },
+      "NFC Business Card",
+      "NFC Key Holder",
+      "Pens",
+      "Notepads",
+      "Mugs",
+      "Water Bottles",
+      "T-Shirts",
+      "Golf Shirts",
+      "Hoodies",
     ],
   },
   {
     title: "OFFICE & EVENTS",
-    headerIcon: Building2,
+    icon: Building2,
     items: [
-      { icon: Flag, label: "Pull-up Banner" },
-      { icon: Tent, label: "Gazebo" },
-      { icon: Table, label: "Table Cloth" },
-      { icon: Flag, label: "Flags" },
-      { icon: Signpost, label: "Wall Banner" },
-      { icon: Signpost, label: "Reception Signage" },
-      { icon: Car, label: "Vehicle Branding" },
-      { icon: AppWindow, label: "Window Vinyl" },
-      { icon: Store, label: "Office Signs" },
+      "Pull-up Banner",
+      "Gazebo",
+      "Table Cloth",
+      "Flags",
+      "Wall Banner",
+      "Reception Signage",
+      "Vehicle Branding",
+      "Window Vinyl",
+      "Office Signs",
     ],
   },
 ];
 
-const BENEFITS = [
-  { icon: Gem, label: "Premium quality materials" },
-  { icon: Layers, label: "Consistent brand everywhere" },
-  { icon: Timer, label: "Fast turnaround times" },
-  { icon: Truck, label: "Delivered to your doorstep" },
-];
-
 export default function BrandCatalogue() {
   return (
-    <section id="catalogue" className="bg-white py-16 lg:py-20">
+    <section id="catalogue" className="bg-white py-20 lg:py-24">
       <div className="container-px">
-        <div className="grid gap-8 lg:grid-cols-[1fr_2.3fr_0.9fr]">
-          {/* Left: heading + accelerator card */}
+        {/* Section header — same shape as "What We Do" on the home page */}
+        <div className="grid items-start gap-10 lg:grid-cols-[1fr_0.8fr]">
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] text-gold-dark">
               CHOOSE WHAT YOU NEED
             </p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-ink">
+            <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold leading-tight tracking-tight text-ink">
               Brand Catalogue
+              <br />
+              <span className="text-gold-dark">
+                Pick the items that fit your business.
+              </span>
             </h2>
-            <p className="mt-2 text-sm text-body">
-              Pick the items that fit your business.
+          </div>
+          <p className="text-body text-sm leading-relaxed lg:pt-2">
+            Build your brand one piece at a time or roll out everything at once.
+            Every item is produced to the same standard, so your business looks
+            the part wherever customers meet it.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 lg:grid-cols-4">
+          {/* Price card */}
+          <div className="flex flex-col rounded-2xl border border-gold p-6 shadow-xl shadow-gold/10">
+            <h3 className="text-lg font-extrabold text-ink">
+              Brand Accelerator
+            </h3>
+            <p className="mt-1 text-xs text-body leading-relaxed">
+              Choose only the items your business needs.
             </p>
 
-            <div className="mt-6 rounded-xl border border-black/[0.08] p-6">
-              <h3 className="text-lg font-bold text-ink">Brand Accelerator</h3>
-              <p className="mt-4 text-sm text-body">Starting from</p>
-              <p className="text-3xl font-extrabold text-gold-dark">R2,500</p>
-              <p className="mt-2 text-sm text-body leading-relaxed">
-                Choose only the items your business needs.
-              </p>
-              <hr className="my-5 border-black/10" />
-              <p className="text-sm text-body leading-relaxed">
-                Unlock the complete Brand Accelerator{" "}
-                <span className="font-semibold text-ink">free</span> when you
-                sign up for{" "}
-                <span className="font-semibold text-ink">AXB Enterprise</span>.
-              </p>
-              <a
-                href="#catalogue"
-                className="mt-6 flex w-full items-center justify-center rounded-md bg-gold px-5 py-3 text-sm font-semibold text-ink hover:bg-gold-light transition-colors"
-              >
-                Browse Catalogue
-              </a>
+            <div className="mt-5">
+              <p className="text-sm text-body">Starting from</p>
+              <span className="text-3xl font-extrabold text-gold-dark">
+                R2,500
+              </span>
             </div>
+
+            <hr className="my-5 border-black/10" />
+
+            <p className="text-sm text-body leading-relaxed grow">
+              Unlock the complete Brand Accelerator{" "}
+              <span className="font-semibold text-ink">free</span> when you sign
+              up for{" "}
+              <span className="font-semibold text-ink">AXB Enterprise</span>.
+            </p>
+
+            <Link
+              href="/#contact"
+              className="mt-8 inline-flex items-center justify-center rounded-md bg-gold px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-gold-light"
+            >
+              Book a Branding Consultation
+            </Link>
           </div>
 
-          {/* Middle: three category cards */}
-          <div className="grid gap-5 sm:grid-cols-3">
-            {CATEGORIES.map((cat) => (
-              <div
-                key={cat.title}
-                className="flex flex-col rounded-xl border border-black/[0.08] p-5"
-              >
-                <div className="flex items-center gap-2 border-b border-black/[0.06] pb-3">
-                  <span className="flex size-7 items-center justify-center rounded-md bg-cream text-gold-dark">
-                    <cat.headerIcon className="size-4" />
-                  </span>
-                  <p className="text-xs font-bold tracking-wider text-ink">
-                    {cat.title}
-                  </p>
-                </div>
-                <ul className="mt-4 flex flex-col gap-3 grow">
-                  {cat.items.map((item, i) => (
-                    <li
-                      key={`${item.label}-${i}`}
-                      className="flex items-center gap-2.5 text-sm text-ink/80"
-                    >
-                      <item.icon className="size-4 shrink-0 text-gold-dark" />
-                      {item.label}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="#catalogue"
-                  className="mt-5 flex items-center justify-center gap-2 rounded-md border border-black/15 px-4 py-2.5 text-sm font-semibold text-ink hover:bg-cream transition-colors"
-                >
-                  View Options
-                  <ArrowRight className="size-4" />
-                </a>
-              </div>
-            ))}
-          </div>
-
-          {/* Right: benefits */}
-          <div className="flex flex-col justify-center gap-7">
-            {BENEFITS.map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-start gap-3">
-                <Icon className="size-5 shrink-0 text-gold-dark" />
-                <p className="text-sm font-medium text-ink leading-snug">
-                  {label}
+          {/* Category cards */}
+          {CATEGORIES.map((cat) => (
+            <div
+              key={cat.title}
+              className="flex flex-col rounded-2xl border border-black/[0.08] p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-md"
+            >
+              <div className="flex items-center gap-3">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-cream text-gold-dark">
+                  <cat.icon className="size-5" />
+                </span>
+                <p className="text-xs font-bold tracking-[0.12em] text-ink">
+                  {cat.title}
                 </p>
               </div>
-            ))}
-          </div>
+
+              <ul className="mt-6 flex flex-col gap-2.5 grow border-t border-black/[0.06] pt-5">
+                {cat.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2.5 text-sm text-ink/80"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="mt-[7px] size-1.5 shrink-0 rounded-full bg-gold"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="/#contact"
+                className="mt-8 inline-flex items-center justify-center gap-2 rounded-md border border-black/15 px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-cream"
+              >
+                View Options
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </section>

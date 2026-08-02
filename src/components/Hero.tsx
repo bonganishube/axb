@@ -11,6 +11,7 @@ import {
 } from "react-icons/fa6";
 import HeroMockup from "./HeroMockup";
 import HeroFeatures from "./HeroFeatures";
+import BackgroundFX from "./BackgroundFX";
 
 const TOOLS = [
   { icon: FaWhatsapp, label: "WhatsApp", color: "#25D366" },
@@ -114,15 +115,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  );
-}
-
-function BackgroundFX() {
-  return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-      <div className="absolute -left-24 -top-24 h-[420px] w-[420px] rounded-full bg-gold/15 blur-[130px]" />
-      <div className="absolute left-[52%] top-1/3 h-[360px] w-[360px] rounded-full bg-violet-600/20 blur-[130px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.05)_1px,transparent_0)] [background-size:26px_26px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
-    </div>
   );
 }

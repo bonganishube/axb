@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function BrandingPage() {
   return (
     <>
-      <Header solid active="Branding" />
+      <Header active="Branding" />
       <main>
         <BrandingHero />
         <BrandCatalogue />

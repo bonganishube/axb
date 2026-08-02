@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { FaPhone, FaEnvelope, FaLocationDot } from "react-icons/fa6";
 import Logo from "./Logo";
 
@@ -11,9 +12,24 @@ const QUICK_LINKS = [
 ];
 
 const CONTACT = [
-  { icon: FaPhone, label: "+27 10 123 4567", href: "tel:+27101234567" },
-  { icon: FaEnvelope, label: "hello@axbai.co.za", href: "mailto:hello@axbai.co.za" },
-  { icon: FaLocationDot, label: "Johannesburg, South Africa", href: null },
+  {
+    icon: FaPhone,
+    caption: "Call us",
+    label: "+27 10 123 4567",
+    href: "tel:+27101234567",
+  },
+  {
+    icon: FaEnvelope,
+    caption: "Email us",
+    label: "hello@axbai.co.za",
+    href: "mailto:hello@axbai.co.za",
+  },
+  {
+    icon: FaLocationDot,
+    caption: "Based in",
+    label: "Johannesburg, South Africa",
+    href: null,
+  },
 ];
 
 const LEGAL = [
@@ -23,117 +39,99 @@ const LEGAL = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-white/70">
-      <div className="container-px grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1.3fr] lg:gap-16">
-        <div className="sm:col-span-2 lg:col-span-1">
-          <Logo />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/50">
-            We help small businesses capture more customers, save time and grow
-            with intelligent automation.
-          </p>
-          {/* Socials — re-import FaLinkedinIn / FaInstagram / FaFacebookF /
-              FaYoutube from react-icons/fa6 when these go live.
-          <div className="mt-6 flex gap-3">
-            {SOCIALS.map(({ icon: Icon, label }) => (
-              <a
-                key={label}
-                href="#"
-                aria-label={label}
-                className="flex size-8 items-center justify-center rounded-full bg-white/10 text-white hover:bg-gold hover:text-ink transition-colors"
-              >
-                <Icon className="size-4" />
-              </a>
-            ))}
-          </div> */}
-        </div>
+    <footer className="bg-ink text-white/65">
+      <div className="container-px">
+        {/* The CTA section above is also dark — this hairline keeps the footer
+            from melting into it. */}
+        <div className="h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
-        <div>
-          <p className="text-sm font-semibold text-white">Quick Links</p>
-          <ul className="mt-4 flex flex-col gap-3 text-sm">
-            {QUICK_LINKS.map((l) => (
-              <li key={l.label}>
-                <Link
-                  href={l.href}
-                  className="transition-colors hover:text-white"
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Resources — restore the RESOURCES list alongside this block.
-        <div>
-          <p className="text-sm font-semibold text-white">Resources</p>
-          <ul className="mt-4 flex flex-col gap-3 text-sm">
-            {RESOURCES.map((l) => (
-              <li key={l}>
-                <a href="#" className="hover:text-white transition-colors">
-                  {l}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div> */}
-
-        <div>
-          <p className="text-sm font-semibold text-white">Contact Us</p>
-          <ul className="mt-4 flex flex-col gap-3 text-sm">
-            {CONTACT.map(({ icon: Icon, label, href }) => (
-              <li key={label}>
-                {href ? (
-                  <a
-                    href={href}
-                    className="flex items-center gap-2 transition-colors hover:text-white"
-                  >
-                    <Icon className="size-4 shrink-0 text-gold" />
-                    {label}
-                  </a>
-                ) : (
-                  <span className="flex items-center gap-2">
-                    <Icon className="size-4 shrink-0 text-gold" />
-                    {label}
-                  </span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Newsletter — re-import ArrowRight from lucide-react, and wire the
-            button to a Server Action before shipping this.
-        <div>
-          <p className="text-sm font-semibold text-white">Newsletter</p>
-          <p className="mt-4 text-sm text-white/50 leading-relaxed">
-            Stay updated with tips and insights to grow your business.
-          </p>
-          <div className="mt-4 flex items-center gap-2">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="min-w-0 flex-1 rounded-md border border-white/15 bg-white/5 px-3 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-gold focus:outline-none"
-            />
-            <button
-              type="button"
-              aria-label="Subscribe"
-              className="flex size-10 shrink-0 items-center justify-center rounded-md bg-gold text-ink hover:bg-gold-light transition-colors"
+        <div className="grid gap-12 py-14 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:py-16">
+          {/* Brand */}
+          <div className="sm:col-span-2 lg:col-span-5">
+            <Logo />
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/55">
+              We help small businesses capture more customers, save time and
+              grow with intelligent automation.
+            </p>
+            <Link
+              href="/#contact"
+              className="group mt-7 inline-flex items-center gap-2 rounded-lg bg-gold px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-gold-light"
             >
-              <ArrowRight className="size-4" />
-            </button>
+              Book a Free Call
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+            </Link>
           </div>
-        </div> */}
+
+          {/* Quick links */}
+          <div className="lg:col-span-3">
+            <ColumnHeading>Quick Links</ColumnHeading>
+            <ul className="mt-5 flex flex-col gap-3 text-sm">
+              {QUICK_LINKS.map((l) => (
+                <li key={l.label}>
+                  <Link
+                    href={l.href}
+                    className="group inline-flex items-center gap-2 transition-colors hover:text-white"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="h-px w-0 bg-gold transition-all group-hover:w-3"
+                    />
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="lg:col-span-4">
+            <ColumnHeading>Contact Us</ColumnHeading>
+            <ul className="mt-5 flex flex-col gap-4">
+              {CONTACT.map(({ icon: Icon, caption, label, href }) => {
+                const body = (
+                  <>
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] text-gold transition-colors group-hover:bg-gold group-hover:text-ink">
+                      <Icon className="size-4" />
+                    </span>
+                    <span className="flex flex-col">
+                      <span className="text-[11px] uppercase tracking-[0.14em] text-white/40">
+                        {caption}
+                      </span>
+                      <span className="text-sm text-white/80 transition-colors group-hover:text-white">
+                        {label}
+                      </span>
+                    </span>
+                  </>
+                );
+
+                return (
+                  <li key={label}>
+                    {href ? (
+                      <a href={href} className="group flex items-center gap-3">
+                        {body}
+                      </a>
+                    ) : (
+                      <span className="group flex items-center gap-3">
+                        {body}
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-px flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/40 sm:flex-row">
+        <div className="container-px flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/45 sm:flex-row">
           <p>
             © {new Date().getFullYear()} AXB AI Consulting. All rights reserved.
           </p>
-          <ul className="flex items-center gap-4">
+          <ul className="flex items-center gap-6">
             {LEGAL.map((l) => (
               <li key={l.label}>
-                <a href={l.href} className="transition-colors hover:text-white/70">
+                <a href={l.href} className="transition-colors hover:text-white">
                   {l.label}
                 </a>
               </li>
@@ -142,5 +140,14 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function ColumnHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <p className="text-sm font-semibold text-white">{children}</p>
+      <span className="mt-2 block h-0.5 w-8 rounded-full bg-gold" />
+    </>
   );
 }
