@@ -13,7 +13,7 @@ const TRUST = [
 export default function BrandingCta() {
   return (
     <section className="relative isolate overflow-hidden rounded-t-[2.5rem] bg-ink text-white">
-      <BackgroundFX accent="gold" />
+      <BackgroundFX accent="gold" centreWash={false} />
 
       {/* Photo — masked, not overlaid. Fading the image's own alpha lets the
           section background show through continuously, so there's no edge for
