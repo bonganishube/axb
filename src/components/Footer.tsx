@@ -15,8 +15,8 @@ const CONTACT = [
   {
     icon: FaPhone,
     caption: "Call us",
-    label: "+27 10 123 4567",
-    href: "tel:+27101234567",
+    label: "+27 65 974 0886",
+    href: "tel:+27659740886",
   },
   {
     icon: FaEnvelope,
