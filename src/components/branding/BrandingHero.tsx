@@ -15,7 +15,35 @@ const BENEFITS = [
 export default function BrandingHero() {
   return (
     <section className="relative isolate overflow-hidden bg-ink text-white rounded-b-[2.5rem]">
-      <BackgroundFX accent="gold" />
+      <BackgroundFX accent="gold" centreWash={false} />
+
+      {/* Full-bleed product photo: anchored to the section's right edge from lg
+         up. The horizontal mask dissolves the photo itself into the section
+         instead of tinting it dark, so the join picks up BackgroundFX's glows
+         and reads as one surface. Many stops on an eased curve — a 3-stop
+         gradient bands visibly across ~500px. Masking the wrapper (not the
+         <Image>) fades the vertical rolloffs with it, so they leave no seam.
+         Sits above BackgroundFX (-z-10) but below the copy. */}
+      <div className="absolute inset-y-0 right-0 -z-[5] hidden w-[64%] [mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.02)_10%,rgba(0,0,0,0.06)_19%,rgba(0,0,0,0.13)_27%,rgba(0,0,0,0.23)_35%,rgba(0,0,0,0.35)_43%,rgba(0,0,0,0.49)_51%,rgba(0,0,0,0.63)_59%,rgba(0,0,0,0.76)_67%,rgba(0,0,0,0.87)_75%,rgba(0,0,0,0.95)_83%,rgba(0,0,0,0.99)_91%,#000_100%)] [mask-repeat:no-repeat] [mask-size:100%_100%] lg:block xl:w-[58%] 2xl:w-[56%]">
+        <Image
+          src="/branding-hero.png"
+          alt="AXB branded stationery, cards and merchandise"
+          fill
+          preload
+          className="object-cover object-center"
+          sizes="(max-width: 1280px) 64vw, 58vw"
+        />
+        {/* vertical rolloffs: keep the photo off the header and off the white
+           section below, eased for the same reason as the mask */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 top-0 h-32 bg-[linear-gradient(to_bottom,rgba(11,11,11,0.85)_0%,rgba(11,11,11,0.55)_30%,rgba(11,11,11,0.25)_60%,rgba(11,11,11,0.08)_82%,transparent_100%)]"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,#0b0b0b_0%,rgba(11,11,11,0.8)_22%,rgba(11,11,11,0.45)_48%,rgba(11,11,11,0.18)_72%,transparent_100%)]"
+        />
+      </div>
 
       <div className="container-px relative pt-28 pb-16 lg:pt-36">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -95,9 +123,9 @@ export default function BrandingHero() {
             </div>
           </div>
 
-          {/* Product mockup */}
+          {/* Product mockup — small screens only; lg+ uses the full-bleed photo */}
           <div
-            className="animate-fade-up relative"
+            className="animate-fade-up relative lg:hidden"
             style={{ animationDelay: "200ms" }}
           >
             {/* warm glow behind the photo, reads as a halo around its corners */}
@@ -106,22 +134,26 @@ export default function BrandingHero() {
               className="absolute -inset-10 -z-10 rounded-full bg-gold/20 blur-[100px]"
             />
 
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-3xl ring-1 ring-white/10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)]">
+            {/* aspect matches the source (1372×1146) so object-cover shows the
+               whole product spread — a 16/10 box crops ~25% off top and bottom */}
+            <div className="relative aspect-[1372/1146] w-full overflow-hidden rounded-3xl ring-1 ring-white/10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)]">
               <Image
                 src="/branding-hero.png"
                 alt="AXB branded stationery, cards and merchandise"
                 fill
-                preload
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="eager"
+                fetchPriority="high"
+                className="object-contain"
+                sizes="100vw"
               />
             </div>
           </div>
         </div>
 
-        {/* Benefits strip */}
+        {/* Benefits strip — held to the copy column on lg so it stays clear of
+           the full-bleed photo on the right */}
         <div
-          className="animate-fade-up mt-16 flex flex-wrap items-center gap-x-10 gap-y-4 border-t border-white/10 pt-8"
+          className="animate-fade-up mt-16 flex flex-wrap items-center gap-x-10 gap-y-4 border-t border-white/10 pt-8 lg:max-w-xl"
           style={{ animationDelay: "500ms" }}
         >
           {BENEFITS.map(({ icon: Icon, label }) => (
