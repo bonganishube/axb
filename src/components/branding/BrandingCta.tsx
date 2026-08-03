@@ -13,25 +13,33 @@ const TRUST = [
 export default function BrandingCta() {
   return (
     <section className="relative isolate overflow-hidden rounded-t-[2.5rem] bg-ink text-white">
-      <BackgroundFX accent="gold" centreWash={false} />
+      <BackgroundFX accent="gold" washes="none" />
 
       {/* Photo — masked, not overlaid. Fading the image's own alpha lets the
           section background show through continuously, so there's no edge for
-          a gradient to almost-but-not-quite match. Top/bottom fades keep it off
-          the white section above and the footer below; the left fade hands over
-          to the copy column on desktop.
+          a gradient to almost-but-not-quite match. At lg the photo covers the
+          right column, with top/bottom fades keeping it off the white section
+          above and the footer below, and a left fade handing over to the copy.
 
-          -z-20 puts it under BackgroundFX (-z-10) so the glow and dot grid run
-          unbroken across the whole section instead of stopping at the photo. */}
+          Below lg it contains instead of covers: the section is portrait and the
+          photo is 3:2, so covering would crop ~60% of the width and leave only
+          the middle of the bag. Contained and bottom-anchored, the whole spread
+          shows and the one exposed edge is the top one — the bottom edge lands
+          on the section boundary, where the footer's ink hides it. The fades are
+          lg-only for the same reason: on a contained photo they'd cut into the
+          product shot rather than its surrounding dark.
+
+          -z-20 puts it under BackgroundFX (-z-10) so the dot grid runs unbroken
+          across the whole section instead of stopping at the photo. */}
       <div
         aria-hidden="true"
-        className="absolute inset-y-0 right-0 -z-20 w-full mask-t-from-80% mask-b-from-65% lg:w-[52%] lg:mask-l-from-45%"
+        className="absolute inset-0 -z-20 lg:left-auto lg:w-[52%] lg:mask-t-from-80% lg:mask-b-from-65% lg:mask-l-from-45%"
       >
         <Image
           src="/branding-cta.jpeg"
           alt=""
           fill
-          className="object-cover object-center"
+          className="object-contain object-bottom lg:object-cover lg:object-center"
           sizes="(min-width: 1024px) 52vw, 100vw"
         />
         {/* Knock the photo back to the same density as the home CTA, where the

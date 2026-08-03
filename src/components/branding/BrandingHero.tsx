@@ -15,7 +15,7 @@ const BENEFITS = [
 export default function BrandingHero() {
   return (
     <section className="relative isolate overflow-hidden bg-ink text-white rounded-b-[2.5rem]">
-      <BackgroundFX accent="gold" centreWash={false} />
+      <BackgroundFX accent="gold" washes="edges" />
 
       {/* Full-bleed product photo: anchored to the section's right edge from lg
          up. The horizontal mask dissolves the photo itself into the section

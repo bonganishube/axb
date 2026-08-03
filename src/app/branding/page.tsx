@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BrandingHero from "@/components/branding/BrandingHero";
 import BrandCatalogue from "@/components/branding/BrandCatalogue";
+import BrandProducts from "@/components/branding/BrandProducts";
 import BrandingCta from "@/components/branding/BrandingCta";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function BrandingPage() {
       <main>
         <BrandingHero />
         <BrandCatalogue />
+        <BrandProducts />
         <BrandingCta />
       </main>
       <Footer />
