@@ -54,7 +54,7 @@ export default function Footer() {
               grow with intelligent automation.
             </p>
             <Link
-              href="/#contact"
+              href="/#contact-form"
               className="group mt-7 inline-flex items-center gap-2 rounded-lg bg-gold px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-gold-light"
             >
               Book a Free Call

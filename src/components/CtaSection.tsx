@@ -45,8 +45,8 @@ export default function CtaSection() {
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
-              href="#packages"
-              className="inline-flex items-center gap-2.5 rounded-lg bg-gold px-6 py-3.5 text-sm font-semibold text-ink shadow-[0_10px_30px_-8px_rgba(215,166,60,0.6)] transition-all hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-[0_16px_40px_-8px_rgba(215,166,60,0.75)]"
+              href="#contact-form"
+              className="inline-flex items-center gap-2.5 rounded-lg bg-gold px-6 py-3.5 text-sm font-semibold text-ink shadow-[0_10px_30px_-8px_rgba(215,166,60,0.6)] transition-all hover:-translate-y-0.5 hover:bg-gold-light hover:shadow-[0_16px_40px_-8px_rgba(215,166,60,0.75)] md:hidden"
             >
               <CalendarDays className="size-4" />
               Book My Free Strategy Call
