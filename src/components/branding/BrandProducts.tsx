@@ -84,11 +84,14 @@ export default function BrandProducts() {
               className="group flex flex-col overflow-hidden rounded-2xl border border-black/[0.06] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-lg"
             >
               {/* Every product gets the same stage, so a tall banner and a flat
-                  stack of cards still line up across the row. The stage stays
-                  white because the mockups are shot on white with no alpha —
-                  any tint would show their edges as a rectangle. Padding sits on
-                  the image so object-contain fits inside it. */}
-              <div className="relative aspect-[4/3]">
+                  stack of cards still line up across the row. Square on purpose:
+                  the mockups are all either 2:3 or 3:2, and in a square box those
+                  reciprocal ratios render to the same area — a wider stage makes
+                  the landscape shots look twice the size of the portrait ones.
+                  The stage stays white because the mockups are shot on white with
+                  no alpha, so any tint would show their edges as a rectangle.
+                  Padding sits on the image so object-contain fits inside it. */}
+              <div className="relative aspect-square">
                 <Image
                   src={src}
                   alt={alt}
