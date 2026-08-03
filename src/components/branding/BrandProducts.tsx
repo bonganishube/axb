@@ -7,8 +7,6 @@ type Product = {
   price: string;
   src: string;
   alt: string;
-  /** Double-width on desktop, to fill the grid's last row. */
-  wide?: boolean;
 };
 
 const PRODUCTS: Product[] = [
@@ -53,7 +51,6 @@ const PRODUCTS: Product[] = [
     price: "30",
     src: "/pens.png",
     alt: "Two branded pens",
-    wide: true,
   },
 ];
 
@@ -61,53 +58,62 @@ export default function BrandProducts() {
   return (
     <section id="products" className="bg-cream py-20 lg:py-24">
       <div className="container-px">
-        {/* The intro sits in the grid's first cell rather than above it, so the
-            cards start on the same line as the heading. */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="lg:pr-4">
+        {/* Same header shape as the Brand Catalogue above it, so the two
+            sections read as a pair rather than two different layouts. */}
+        <div className="grid items-start gap-10 lg:grid-cols-[1fr_0.8fr]">
+          <div>
             <p className="text-xs font-semibold tracking-[0.2em] text-gold-dark">
               OUR BRANDING PRODUCTS
             </p>
-            {/* No sm:text-4xl bump like the other section headings get — this
-                one lives in a quarter-width grid cell, not across the page. */}
-            <h2 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-ink">
-              Everything You Need to Represent Your Brand
+            <h2 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-ink sm:text-4xl">
+              Everything You Need
+              <br />
+              <span className="text-gold-dark">to Represent Your Brand</span>
             </h2>
-            <p className="mt-5 text-sm leading-relaxed text-body">
-              High-quality branded items that help you make a lasting impression
-              everywhere your business goes.
-            </p>
           </div>
+          <p className="text-body text-sm leading-relaxed lg:pt-2">
+            High-quality branded items that help you make a lasting impression
+            everywhere your business goes.
+          </p>
+        </div>
 
-          {PRODUCTS.map(({ title, blurb, price, src, alt, wide }) => (
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {PRODUCTS.map(({ title, blurb, price, src, alt }) => (
             <article
               key={title}
-              className={`flex gap-4 rounded-2xl border border-black/[0.08] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-md ${
-                wide ? "sm:col-span-2" : ""
-              }`}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-black/[0.06] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-lg"
             >
-              {/* The mockups are shot on near-white, so they sit straight on the
-                  card with no panel behind them. Contained, not covered — these
-                  are products, and a crop would cut the item itself. min-h keeps
-                  the image area from collapsing on the shortest blurbs. */}
-              <div className="relative min-h-[210px] w-[46%] shrink-0 self-stretch">
+              {/* Every product gets the same stage, so a tall banner and a flat
+                  stack of cards still line up across the row. The stage stays
+                  white because the mockups are shot on white with no alpha —
+                  any tint would show their edges as a rectangle. Padding sits on
+                  the image so object-contain fits inside it. */}
+              <div className="relative aspect-[4/3]">
                 <Image
                   src={src}
                   alt={alt}
                   fill
-                  className="object-contain object-center"
-                  sizes="(min-width: 1024px) 20vw, (min-width: 640px) 25vw, 45vw"
+                  className="object-contain p-6 transition-transform duration-500 group-hover:scale-[1.04]"
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
                 />
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex grow flex-col px-6 pb-6">
                 <h3 className="text-lg font-extrabold leading-tight text-ink">
                   {title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-body">{blurb}</p>
-                <p className="mt-auto pt-6 text-sm font-bold text-gold-dark">
-                  From R{price}
+                {/* grow on the blurb absorbs the slack from shorter copy, so the
+                    prices line up along the bottom of every card in a row */}
+                <p className="mt-2 grow text-sm leading-relaxed text-body">
+                  {blurb}
                 </p>
+
+                <div className="mt-6 flex items-baseline gap-1.5 border-t border-black/[0.06] pt-4">
+                  <span className="text-xs font-medium text-body">From</span>
+                  <span className="text-lg font-extrabold text-gold-dark">
+                    R{price}
+                  </span>
+                </div>
               </div>
             </article>
           ))}
