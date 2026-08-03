@@ -42,12 +42,12 @@ export default function Hero() {
               className="animate-fade-up mt-5 text-[26px] font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[40px]"
               style={{ animationDelay: "80ms" }}
             >
-              Stop Losing Customers to{" "}
-              <br className="hidden lg:block" />
-              Missed Calls, Slow Responses{" "}
-              <br className="hidden lg:block" />
+              Work Smarter. Serve Faster.{" "}
+              {/* <br className="hidden lg:block" />
+              {" "}
+              <br className="hidden lg:block" /> */}
               <span className="bg-[linear-gradient(100deg,#f2ce78,#d7a63c_55%,#9a7621)] bg-clip-text text-transparent">
-                and Manual Admin.
+                Grow Without the Extra Admin.
               </span>
             </h1>
 
@@ -55,9 +55,7 @@ export default function Hero() {
               className="animate-fade-up mt-6 max-w-md text-[15px] leading-relaxed text-white/60"
               style={{ animationDelay: "160ms" }}
             >
-              We help small businesses capture every lead, book more
-              appointments and save hours of admin—so your team can focus on
-              what matters.
+              We automate everyday tasks like customer enquiries, bookings, follow-ups and admin, helping your business run smoothly even when you're busy.
             </p>
 
             <div
