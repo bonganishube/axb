@@ -6,6 +6,7 @@ import Logo from "./Logo";
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "Solutions", href: "/#what-we-do" },
+  { label: "Offerings", href: "/offerings" },
   { label: "Packages", href: "/#packages" },
   { label: "Industries", href: "/#industries" },
   { label: "Branding", href: "/branding" },

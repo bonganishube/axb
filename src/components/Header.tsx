@@ -8,6 +8,7 @@ import Logo from "./Logo";
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Solutions", href: "/#what-we-do" },
+  { label: "Offerings", href: "/offerings" },
   { label: "Packages", href: "/#packages" },
   { label: "Industries", href: "/#industries" },
   { label: "Branding", href: "/branding" },
