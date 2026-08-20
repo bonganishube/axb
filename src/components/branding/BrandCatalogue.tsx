@@ -81,35 +81,7 @@ export default function BrandCatalogue() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-4">
-          {/* Price card */}
-          <div className="flex flex-col rounded-2xl border border-gold p-6 shadow-xl shadow-gold/10">
-            <h3 className="text-lg font-extrabold text-ink">
-              Brand Accelerator
-            </h3>
-            <p className="mt-1 text-xs text-body leading-relaxed">
-              Choose only the items your business needs.
-            </p>
-
-            <div className="mt-5">
-              <p className="text-sm text-body">Starting from</p>
-              <span className="text-3xl font-extrabold text-gold-dark">
-                R2,500
-              </span>
-            </div>
-
-            <hr className="my-5 border-black/10" />
-
-            <div className="grow" />
-
-            <Link
-              href="/#contact"
-              className="mt-8 inline-flex items-center justify-center rounded-md bg-gold px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-gold-light"
-            >
-              Book a Branding Consultation
-            </Link>
-          </div>
-
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {/* Category cards */}
           {CATEGORIES.map((cat) => (
             <div
