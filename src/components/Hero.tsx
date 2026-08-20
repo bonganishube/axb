@@ -1,4 +1,4 @@
-import { Play, Sparkles } from "lucide-react";
+import { Play } from "lucide-react";
 import {
   FaWhatsapp,
   FaTiktok,
@@ -33,13 +33,8 @@ export default function Hero() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.3fr_0.72fr_0.72fr] lg:items-center lg:gap-10">
           {/* Copy */}
           <div className="max-w-xl">
-            <span className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-medium text-gold">
-              {/* <Sparkles className="size-3.5" /> */}
-              AI automation for small businesses
-            </span>
-
             <h1
-              className="animate-fade-up mt-5 text-[26px] font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[40px]"
+              className="animate-fade-up text-[26px] font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[40px]"
               style={{ animationDelay: "80ms" }}
             >
               Work Smarter. Serve Faster.{" "}

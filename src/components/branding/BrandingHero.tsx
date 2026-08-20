@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Crown, Gem, Layers, Plus, Timer, Truck } from "lucide-react";
+import { ArrowRight, Gem, Layers, Timer, Truck } from "lucide-react";
 import BackgroundFX from "../BackgroundFX";
 
 /* Moved up from the catalogue: reads like the home hero's "works with the
@@ -49,12 +49,8 @@ export default function BrandingHero() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Copy */}
           <div className="max-w-xl">
-            <span className="animate-fade-up inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-medium text-gold">
-              Take your business to the next level
-            </span>
-
             <h1
-              className="animate-fade-up mt-5 text-[26px] font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[40px]"
+              className="animate-fade-up text-[26px] font-extrabold leading-[1.15] tracking-tight sm:text-4xl lg:text-[40px]"
               style={{ animationDelay: "80ms" }}
             >
               Look as professional{" "}
@@ -80,28 +76,6 @@ export default function BrandingHero() {
               consistent, premium brand presence across digital and physical
               touchpoints.
             </p>
-
-            <div
-              className="animate-fade-up mt-7 flex flex-wrap gap-3"
-              style={{ animationDelay: "260ms" }}
-            >
-              <span className="inline-flex items-center gap-2.5 rounded-lg border border-gold/30 bg-gold/10 px-4 py-3">
-                <Crown className="size-5 shrink-0 text-gold" />
-                <span className="text-sm font-semibold leading-tight text-white">
-                  Included with
-                  <br />
-                  AXB Enterprise
-                </span>
-              </span>
-              <span className="inline-flex items-center gap-2.5 rounded-lg border border-white/15 bg-white/[0.04] px-4 py-3">
-                <Plus className="size-5 shrink-0 text-gold" />
-                <span className="text-sm font-medium leading-tight text-white/80">
-                  Available as an add-on
-                  <br />
-                  for all other packages
-                </span>
-              </span>
-            </div>
 
             <div
               className="animate-fade-up mt-8 flex flex-wrap items-center gap-4"

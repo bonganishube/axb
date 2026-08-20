@@ -34,7 +34,9 @@ export default function Testimonial() {
               alt="Dr. N. Mahlangu, Medical Practice Owner"
               fill
               sizes="(min-width: 1024px) 28rem, 100vw"
-              className="object-cover"
+              /* Landscape source in a portrait frame — biased right of centre
+                 so the crop keeps her hands and the document. */
+              className="object-cover object-[72%_center]"
             />
           </div>
           <div className="relative mx-auto -mt-6 w-[calc(100%-2rem)] rounded-2xl bg-white p-6 shadow-xl sm:absolute sm:-bottom-6 sm:-left-6 sm:mt-0 sm:w-80">

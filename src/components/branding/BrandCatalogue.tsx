@@ -74,7 +74,7 @@ export default function BrandCatalogue() {
               </span>
             </h2>
           </div>
-          <p className="text-body text-sm leading-relaxed lg:pt-2">
+          <p className="text-body text-sm leading-relaxed lg:self-end">
             Build your brand one piece at a time or roll out everything at once.
             Every item is produced to the same standard, so your business looks
             the part wherever customers meet it.
@@ -100,12 +100,7 @@ export default function BrandCatalogue() {
 
             <hr className="my-5 border-black/10" />
 
-            <p className="text-sm text-body leading-relaxed grow">
-              Unlock the complete Brand Accelerator{" "}
-              <span className="font-semibold text-ink">free</span> when you sign
-              up for{" "}
-              <span className="font-semibold text-ink">AXB Enterprise</span>.
-            </p>
+            <div className="grow" />
 
             <Link
               href="/#contact"

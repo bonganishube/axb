@@ -71,7 +71,7 @@ export default function BrandProducts() {
               <span className="text-gold-dark">to Represent Your Brand</span>
             </h2>
           </div>
-          <p className="text-body text-sm leading-relaxed lg:pt-2">
+          <p className="text-body text-sm leading-relaxed lg:self-end">
             High-quality branded items that help you make a lasting impression
             everywhere your business goes.
           </p>

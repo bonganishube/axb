@@ -2,8 +2,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { FaPhone, FaEnvelope, FaLocationDot } from "react-icons/fa6";
 import Logo from "./Logo";
+import { SHOW_DRAFT_PAGES, isDraftLink } from "@/lib/site";
 
-const QUICK_LINKS = [
+const ALL_QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "Solutions", href: "/#what-we-do" },
   { label: "Offerings", href: "/offerings" },
@@ -11,6 +12,11 @@ const QUICK_LINKS = [
   { label: "Industries", href: "/#industries" },
   { label: "Branding", href: "/branding" },
 ];
+
+/* Unreleased pages are dropped from the footer on the live site. */
+const QUICK_LINKS = SHOW_DRAFT_PAGES
+  ? ALL_QUICK_LINKS
+  : ALL_QUICK_LINKS.filter((l) => !isDraftLink(l.href));
 
 const CONTACT = [
   {

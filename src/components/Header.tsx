@@ -4,8 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
+import { SHOW_DRAFT_PAGES, isDraftLink } from "@/lib/site";
 
-const NAV_LINKS = [
+const ALL_NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Solutions", href: "/#what-we-do" },
   { label: "Offerings", href: "/offerings" },
@@ -13,6 +14,11 @@ const NAV_LINKS = [
   { label: "Industries", href: "/#industries" },
   { label: "Branding", href: "/branding" },
 ];
+
+/* Unreleased pages are dropped from the nav on the live site. */
+const NAV_LINKS = SHOW_DRAFT_PAGES
+  ? ALL_NAV_LINKS
+  : ALL_NAV_LINKS.filter((link) => !isDraftLink(link.href));
 
 type HeaderProps = {
   solid?: boolean;

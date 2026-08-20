@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, Clock, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Award, Clock, ShieldCheck } from "lucide-react";
 import { Fragment } from "react";
 import BackgroundFX from "../BackgroundFX";
 
 const TRUST = [
   { icon: ShieldCheck, label: "No obligation" },
   { icon: Clock, label: "30-min call" },
-  { icon: Sparkles, label: "Free with AXB Enterprise" },
 ];
 
 export default function BrandingCta() {

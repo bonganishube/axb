@@ -57,7 +57,7 @@ export default function WhatWeDo() {
               </span>
             </h2>
           </div>
-          <p className="text-body text-sm leading-relaxed lg:pt-2">
+          <p className="text-body text-sm leading-relaxed lg:self-end">
             One connected system that works behind the scenes to help you
             attract customers, respond instantly and automate daily
             operations.
